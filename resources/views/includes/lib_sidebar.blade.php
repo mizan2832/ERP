@@ -17,19 +17,19 @@
     
   
       <!-- Layouts -->
-      <li class="menu-item">
+      <li class="menu-item {{ Route::currentRouteNamed('buyer') || Route::currentRouteNamed('supplier')  ? 'show' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Profile</div>
         </a>
   
         <ul class="menu-sub">
-          <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+          <li class="menu-item {{ Route::currentRouteNamed('buyer') ? 'active' : '' }}">
+            <a href="{{ route('buyer') }}"  class="menu-link ">
               <div data-i18n="Without menu">Buyer</div>
             </a>
           </li>
-          <li class="menu-item">
+          <li class="menu-item {{ Route::currentRouteNamed('supplier') ? 'active' : '' }}">
             <a href="layouts-without-navbar.html" class="menu-link">
               <div data-i18n="Without navbar">Supplier</div>
             </a>
