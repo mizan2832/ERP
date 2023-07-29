@@ -10,7 +10,7 @@ Route::get('/',function(){
 })->middleware(['auth','role:admin'])->name('admin.index');
 
 Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group(function() {
-
+    
     Route::get('/library', function () {
         return view('pages.library');
     })->name('library');
