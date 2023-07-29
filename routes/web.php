@@ -9,13 +9,13 @@ Route::get('/',function(){
     return view('pages.home');
 })->middleware(['auth','role:admin'])->name('admin.index');
 
+Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group(function() {
 
-Route::get('/library', function () {
-    return view('pages.library');
+    Route::get('/library', function () {
+        return view('pages.library');
+    })->name('library');
+    Route::get('/buyer', [BuyerController::class, 'index'])->name('buyer.index');
 });
 
 
-Route::get('/buyer', [BuyerController::class, 'index'])->name('buyer');
 
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

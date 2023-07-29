@@ -17,7 +17,7 @@
   class="light-style layout-menu-fixed"
   dir="ltr"
   data-theme="theme-default"
-  
+
 >
   <head>
     <meta charset="utf-8" />
@@ -53,15 +53,10 @@
     <link rel="stylesheet" href=" {{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }} " />
 
     <link rel="stylesheet" href=" {{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }} " />
-
-    <!-- Page CSS -->
-
-    <!-- Helpers -->
     <script src=" {{ asset('assets/vendor/js/helpers.js') }} "></script>
-
-    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
-    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src=" {{ asset('assets/js/config.js') }} "></script>
+
+    @stack('css')
 
     <style>
       .menu-vertical .menu-item.active{
@@ -102,7 +97,7 @@
               <div>
                 <ul class="navbar-nav navbar-fixed-top">
                   <li class="nav-item">
-                    <a class="nav-link " href="{{ url('library') }}">Library</a>
+                    <a class="nav-link " href="{{ route('admin.library') }}">Library</a>
                   </li>
                  <li class="nav-item">
                     <a class="nav-link" href="#">Merchandising</a>

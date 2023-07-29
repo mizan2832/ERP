@@ -1,31 +1,31 @@
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
     <div class="app-brand demo">
       <a href="index.html" class="app-brand-link">
-       
+
         <span class="app-brand-text demo menu-text fw-bolder ms-2">Sneat</span>
       </a>
-  
+
       <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
         <i class="bx bx-chevron-left bx-sm align-middle"></i>
       </a>
     </div>
-  
+
     <div class="menu-inner-shadow"></div>
-  
+
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
-    
-  
+
+
       <!-- Layouts -->
       <li class="menu-item {{ Route::currentRouteNamed('buyer') || Route::currentRouteNamed('supplier')  ? 'show' : '' }}">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Profile</div>
         </a>
-  
+
         <ul class="menu-sub">
           <li class="menu-item {{ Route::currentRouteNamed('buyer') ? 'active' : '' }}">
-            <a href="{{ route('buyer') }}"  class="menu-link ">
+            <a href="{{ route('admin.buyer.index') }}"  class="menu-link ">
               <div data-i18n="Without menu">Buyer</div>
             </a>
           </li>
@@ -41,7 +41,7 @@
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Item Details</div>
         </a>
-  
+
         <ul class="menu-sub">
           <li class="menu-item">
             <a href="layouts-without-menu.html" class="menu-link">
@@ -60,7 +60,7 @@
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">Merchandising Details</div>
         </a>
-  
+
         <ul class="menu-sub">
           <li class="menu-item">
             <a href="layouts-without-menu.html" class="menu-link">
@@ -134,13 +134,13 @@
           </li>
         </ul>
       </li>
-  
+
       <li class="menu-item">
           <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons bx bx-layout"></i>
             <div data-i18n="Layouts">Company Setting</div>
           </a>
-  
+
           <ul class="menu-sub">
             <li class="menu-item">
               <a href="layouts-without-menu.html" class="menu-link">
@@ -159,7 +159,7 @@
             <i class="menu-icon tf-icons bx bx-layout"></i>
             <div data-i18n="Layouts">Variable Setting</div>
           </a>
-  
+
           <ul class="menu-sub">
             <li class="menu-item">
               <a href="layouts-without-menu.html" class="menu-link">
@@ -178,7 +178,7 @@
             <i class="menu-icon tf-icons bx bx-layout"></i>
             <div data-i18n="Layouts">Report</div>
           </a>
-  
+
           <ul class="menu-sub">
             <li class="menu-item">
               <a href="layouts-without-menu.html" class="menu-link">
@@ -192,7 +192,7 @@
             </li>
           </ul>
       </li>
-  
-  
+
+
     </ul>
   </aside>
