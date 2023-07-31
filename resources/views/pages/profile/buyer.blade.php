@@ -98,7 +98,7 @@
                             </div>
 
                             <div class="col-md-8">
-                                <select name="company" id="company" class="form-control">
+                                <select name="tag_company" id="tag_company" class="form-control">
                                     <option value="" >Select Company</option>
                                     <option value="">Radiance Jeans Ltd.</option>
                                     <option value="">Radiance Fashon Ltd.</option>

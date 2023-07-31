@@ -20,11 +20,12 @@ return new class extends Migration
             $table->string('email');
             $table->string('party_type');
             $table->text('address');
-            $table->text('address');
+            $table->text('tag_company');
             $table->string('credit_limit');
             $table->string('supplier');
             $table->string('country');
             $table->string('buffer_days');
+            $table->string('web');
             $table->string('status');
             $table->string('partial');
             $table->string('bank');
