@@ -10,11 +10,12 @@ Route::get('/',function(){
 })->middleware(['auth','role:admin'])->name('admin.index');
 
 Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group(function() {
-    
+
     Route::get('/library', function () {
         return view('pages.library');
     })->name('library');
     Route::get('/buyer', [BuyerController::class, 'index'])->name('buyer.index');
+    Route::post('/buyer/save', [BuyerController::class, 'store'])->name('buyer.store');
 });
 
 
