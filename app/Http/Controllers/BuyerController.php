@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Buyer;
+use App\Models\Party;
+use App\Models\Country;
 use Illuminate\Http\Request;
+use App\Models\MerchandiserGroup;
 
 class BuyerController extends Controller
 {
@@ -14,7 +17,14 @@ class BuyerController extends Controller
      */
     public function index()
     {
-        return view('pages.profile.buyer');
+        $parties = Party::all();
+        $countries = Country::all();
+        $countries = Country::all();
+        $groups = MerchandiserGroup::all();
+        return view('pages.profile.buyer')
+                                            ->withParties($parties)
+                                            ->withCountries($countries)
+                                            ->withGroups($groups);
     }
 
     /**
@@ -35,7 +45,7 @@ class BuyerController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+
     }
 
     /**

@@ -20,9 +20,14 @@
             margin-right: 10px;
         }
 
-
+        #country{
+            width:
+        }
 
     </style>
+@endpush
+@push('head')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @endpush
 
 @section('sidebar')
@@ -75,8 +80,9 @@
                             <div class="col-md-8">
                                 <select name="party_type" id="party_type" class="form-control">
                                     <option value="" >Select Party</option>
-                                    <option value="">Buyer</option>
-                                    <option value="">Buyer-Subcontract</option>
+                                    @foreach ($parties as $party)
+                                        <option value="{{ $party->id }}">{{ $party->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -140,9 +146,10 @@
 
                             <div class="col-md-8">
                                 <select name="country" id="country" class="form-control">
-                                    <option value="" disabled>Select Country</option>
-                                    <option value="">Poland</option>
-                                    <option value="">Russia</option>
+                                    <option value="">Select Country</option>
+                                    @foreach ($countries as $country)
+                                         <option value="{{ $country->code }}">{{ $country->name }}</option>
+                                     @endforeach
                                 </select>
                             </div>
 
@@ -212,8 +219,8 @@
                             <div class="col-md-8">
                                 <select name="bank" id="bank" class="form-control">
                                     <option value="">Select Bank </option>
-                                    <option value="">South Bank</option>
-                                    <option value="">AB Bank</option>
+                                    <option value="sb">South Bank</option>
+                                    <option value="ab">AB Bank</option>
                                 </select>
                             </div>
                         </div>
@@ -227,8 +234,9 @@
                             <div class="col-md-8">
                                 <select name="team" id="team" class="form-control">
                                     <option value="">Select Team</option>
-                                    <option value="">Woven RFL-1 </option>
-                                    <option value="">Woven RFL-2</option>
+                                    @foreach ($groups as $g)
+                                        <option value="{{ $g->id }}">{{ $g->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 
@@ -277,5 +285,8 @@
       </div>
 </div>
 @endsection
-@stack('js')
+
+@push('js')
+    <script src="{{ asset('assets/js/buyer.js') }}"></script>
+@endpush
 

@@ -55,7 +55,7 @@
     <link rel="stylesheet" href=" {{ asset('assets/vendor/libs/apex-charts/apex-charts.css') }} " />
     <script src=" {{ asset('assets/vendor/js/helpers.js') }} "></script>
     <script src=" {{ asset('assets/js/config.js') }} "></script>
-    
+
     <style>
       .menu-vertical .menu-item.active{
         background-color: red;
@@ -66,6 +66,7 @@
       }
     </style>
 
+    @stack('head')
     @stack('css')
 
   </head>
@@ -125,7 +126,7 @@
                     <a class="nav-link" href="#">Approval</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Admin</a>
+                    <a class="nav-link" href="">Admin</a>
                   </li>
                 </ul>
               </div>
