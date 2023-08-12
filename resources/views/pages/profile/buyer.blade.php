@@ -46,7 +46,7 @@
                                 <label for="inputPassword6" class="col-form-label">Contact Name</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text"  name="full_name" class="form-control" aria-describedby="passwordHelpInline">
+                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline">
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                                 <label for="inputPassword6" class="col-form-label">Short Name</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text"  name="short_name" class="form-control" aria-describedby="passwordHelpInline">
+                                <input type="text"  name="short_name" id="short_name" class="form-control short_name" aria-describedby="passwordHelpInline">
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                                 <label for="inputPassword6" class="col-form-label">Email</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="email"  name="email" class="form-control" aria-describedby="passwordHelpInline">
+                                <input type="email"  name="email" id="email" class="form-control email" aria-describedby="passwordHelpInline">
                             </div>
                         </div>
                     </div>
@@ -93,7 +93,7 @@
                                 <label for="inputPassword6" class="col-form-label">Address</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" name="address"  class="form-control" aria-describedby="passwordHelpInline">
+                                <input type="text" name="address" id="address" class="form-control" aria-describedby="passwordHelpInline">
                             </div>
                         </div>
                     </div>
@@ -104,10 +104,10 @@
                             </div>
 
                             <div class="col-md-8">
-                                <select name="company" id="company" class="form-control">
+                                <select name="tag_company" id="tag_company" class="form-control">
                                     <option value="" >Select Company</option>
-                                    <option value="">Radiance Jeans Ltd.</option>
-                                    <option value="">Radiance Fashon Ltd.</option>
+                                    <option value="rjl">Radiance Jeans Ltd.</option>
+                                    <option value="rfl">Radiance Fashon Ltd.</option>
                                 </select>
                             </div>
                         </div>
@@ -120,7 +120,7 @@
                                 <label for="credit_limit" class="col-form-label">Credit Limit Days</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" name="credit_limit"  class="form-control" aria-describedby="passwordHelpInline">
+                                <input type="text" name="credit_limit" id="credit_limit"  class="form-control" aria-describedby="passwordHelpInline">
                             </div>
                         </div>
                     </div>
@@ -246,7 +246,7 @@
         </div>
 
         <div class="save-button d-flex justify-content-center align-items-center g-2">
-            <input type="submit" value="save" class="btn btn-primary">
+            <input type="submit" value="save" id="save" class="btn btn-primary">
             <input type="submit" value="Info" class="btn btn-info">
             <input type="submit" value="Delete" class="btn btn-success">
         </div>
