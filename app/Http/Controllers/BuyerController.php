@@ -57,7 +57,7 @@ class BuyerController extends Controller
         $buyer->supplier = $request->supplier;
         $buyer->country = $request->country;
         $buyer->buffer_days = $request->buffer_days;
-        $buyer->website = $request->website;
+        $buyer->web = $request->website;
         $buyer->status = $request->status;
         $buyer->partial = $request->partial;
         $buyer->bank = $request->bank;

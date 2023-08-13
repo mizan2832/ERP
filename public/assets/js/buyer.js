@@ -7,7 +7,7 @@ $.ajaxSetup({
 $("#save").click(function(e) {
     e.preventDefault();
     let data = {
-                "_token":$('#token').val(),
+                 "_token": $('#token').val(),
                 full_name:$("#full_name").val(),
                 short_name:$("#short_name").val(),
                 email:$("#email").val(),
@@ -29,9 +29,10 @@ $("#save").click(function(e) {
     $.ajax({
         type    :'POST',
         dataType:'json',
-        url     :"{route('admin.buyer.store') }}",
+        url     :'buyer/add',
         data    : data,
         success:function(response){
+            console.log(response);
             showAllBuyer();
             $("#full_name").val('');
             $("#short_name").val('');
@@ -58,9 +59,9 @@ function showAllBuyer(){
     $.ajax({
         type:"GET",
         dataType:'JSON',
-        url: "{{ route('admin.buyer.list') }}",
+        url: "buyer/list",
         success:function(response){
-            $('.buyer_table').load("{ route('admin.buyer.list') }}");
+            console.log(response);
         }
     })
 }

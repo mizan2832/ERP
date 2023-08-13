@@ -132,8 +132,8 @@
                             <div class="col-md-8">
                                 <select name="supplier" id="supplier" class="form-control">
                                     <option value="">Select Supplier <i class="fa-solid fa-angle-down fa-lg"></i></option>
-                                    <option value="">AGS</option>
-                                    <option value="">Warptex</option>
+                                    <option value="ags">AGS</option>
+                                    <option value="wa">Warptex</option>
                                 </select>
                             </div>
                         </div>
@@ -204,8 +204,8 @@
                             <div class="col-md-8">
                                 <select name="partial" id="partial" class="form-control">
                                     <option value="">Select</option>
-                                    <option value="">YES</option>
-                                    <option value="">NO</option>
+                                    <option value="1">YES</option>
+                                    <option value="2">NO</option>
                                 </select>
                             </div>
                         </div>
@@ -269,7 +269,7 @@
             </tr>
           </thead>
           <tbody class="buyer_table">
-          
+
 
           </tbody>
         </table>
