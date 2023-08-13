@@ -20,11 +20,7 @@ return new class extends Migration
             $table->string('email');
             $table->string('party_type');
             $table->text('address');
-<<<<<<< HEAD
-            $table->text('address2');
-=======
             $table->text('tag_company');
->>>>>>> 589bf619e7b48feee14cf669942608477864a721
             $table->string('credit_limit');
             $table->string('supplier');
             $table->string('country');

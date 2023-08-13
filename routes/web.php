@@ -15,7 +15,8 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
         return view('pages.library');
     })->name('library');
     Route::get('/buyer', [BuyerController::class, 'index'])->name('buyer.index');
-    Route::post('/buyer/save', [BuyerController::class, 'store'])->name('buyer.store');
+    Route::post('/buyer/add', [BuyerController::class, 'store'])->name('buyer.store');
+    Route::get('/buyer/list', [BuyerController::class, 'getAllBuyer'])->name('buyer.list');
 
     //party route
 

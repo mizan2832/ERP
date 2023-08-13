@@ -1,5 +1,5 @@
 <footer class="content-footer footer bg-footer-theme">
-   
+
   </footer>
   <!-- / Footer -->
 
@@ -38,3 +38,5 @@
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+@stack('js')

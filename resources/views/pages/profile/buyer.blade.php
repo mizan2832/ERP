@@ -36,8 +36,8 @@
 
 @section('content')
 <div class="card form-buyer ">
-    <form action="{{ route('admin.buyer.store') }}" method="POST">
-        @csrf
+
+
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row col-md-12 g-3   align-items-center">
                     <div class="col-md-4">
@@ -187,8 +187,8 @@
                             <div class="col-md-8">
                                 <select name="status" id="status" class="form-control">
                                     <option value="" disabled>Select Status</option>
-                                    <option value="">Active</option>
-                                    <option value="">Inactive</option>
+                                    <option value="1">Active</option>
+                                    <option value="2">Inactive</option>
                                 </select>
                             </div>
 
@@ -246,12 +246,12 @@
         </div>
 
         <div class="save-button d-flex justify-content-center align-items-center g-2">
-            <input type="submit" value="save" id="save" class="btn btn-primary">
-            <input type="submit" value="Info" class="btn btn-info">
-            <input type="submit" value="Delete" class="btn btn-success">
-        </div>
+            <button  value="save" id="save" class="btn btn-primary">Save</button>
+            <button  value="info" id="info" class="btn btn-primary">Update</button>
+            <button  value="delete" id="delete" class="btn btn-primary">Delete</button>
+            <button  value="reset" id="reset" class="btn btn-primary">Reset</button>
 
-</form>
+        </div>
 </div>
 <div class="card form-buyer-list">
     <div class="container  ">
@@ -268,17 +268,8 @@
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
-
-            <tr>
-              <td>1</td>
-              <td>LIDL</td>
-              <td>buyer</td>
-              <td>lidl@gmail.com</td>
-              <td>pollan, downhall</td>
-              <td>Com. Invoice</td>
-              <td>Active</td>
-            </tr>
+          <tbody class="buyer_table">
+          
 
           </tbody>
         </table>

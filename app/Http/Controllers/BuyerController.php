@@ -27,11 +27,12 @@ class BuyerController extends Controller
                                             ->withGroups($groups);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function getAllBuyer()
+    {
+        $buyer = Buyer::all();
+        return response()->json($buyer);
+    }
+
     public function create()
     {
         //
@@ -45,7 +46,25 @@ class BuyerController extends Controller
      */
     public function store(Request $request)
     {
+        $buyer = new Buyer();
+        $buyer->full_name = $request->full_name;
+        $buyer->short_name = $request->short_name;
+        $buyer->email = $request->email;
+        $buyer->party_type = $request->party_type;
+        $buyer->address = $request->address;
+        $buyer->tag_company = $request->tag_company;
+        $buyer->credit_limit = $request->credit_limit;
+        $buyer->supplier = $request->supplier;
+        $buyer->country = $request->country;
+        $buyer->buffer_days = $request->buffer_days;
+        $buyer->website = $request->website;
+        $buyer->status = $request->status;
+        $buyer->partial = $request->partial;
+        $buyer->bank = $request->bank;
+        $buyer->team = $request->team;
+        $buyer->save();
 
+        return response()->json($request);
     }
 
     /**
