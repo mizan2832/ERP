@@ -250,7 +250,6 @@
             <button  value="info" id="info" class="btn btn-primary">Update</button>
             <button  value="delete" id="delete" class="btn btn-primary">Delete</button>
             <button  value="reset" id="reset" class="btn btn-primary">Reset</button>
-
         </div>
 </div>
 <div class="card form-buyer-list">
