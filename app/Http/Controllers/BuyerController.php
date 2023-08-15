@@ -19,7 +19,7 @@ class BuyerController extends Controller
     {
         $parties = Party::all();
         $countries = Country::all();
-        $buyers = Buyer::all();
+        $buyers = Buyer::paginate(3);
         $groups = MerchandiserGroup::all();
         return view('pages.profile.buyer')
                                             ->withParties($parties)
@@ -32,6 +32,20 @@ class BuyerController extends Controller
     {
         $buyers = Buyer::all();
         return response()->json($buyers);
+    }
+
+    public function getBuyerSearch(Request $request)
+    {
+        $full_name_input = $request->full_name_input;
+        $partyType_input = $request->partyType_input;
+        $email_input = $request->email_input;
+        $team_input = $request->team_input;
+        $status_input = $request->status_input;
+
+        if($request->ajax()) {
+            $buyers = Buyer::getBuyerList($full_name_input, $partyType_input, $email_input,$team_input,$status_input);
+            return view('pages.profile.buyer_table', compact('buyers'))->render();
+        }
     }
 
     public function create()

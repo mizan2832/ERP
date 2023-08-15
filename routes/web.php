@@ -17,6 +17,7 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
     Route::get('/buyer', [BuyerController::class, 'index'])->name('buyer.index');
     Route::post('/buyer/add', [BuyerController::class, 'store'])->name('buyer.store');
     Route::get('/buyer/list', [BuyerController::class, 'getAllBuyer'])->name('buyer.list');
+    Route::get('/buyer/search', [BuyerController::class, 'getBuyerSearch'])->name('buyer.search');
 
     //party route
 

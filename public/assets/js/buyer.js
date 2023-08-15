@@ -4,6 +4,34 @@ $.ajaxSetup({
     }
 });
 
+//buyer search start
+
+$('#full_name_input,#partyType_input,#team_input,#email_input,#status_input').on('keyup', function(){ getBuyers(); });
+
+function getBuyers() {
+    $.ajax({
+        type: "GET",
+        data: {
+          'full_name_input':$('#full_name_input').val(),
+          'partyType_input': $("#partyType_input").val(),
+          'email_input': $("#email_input").val(),
+          'team_input': $("#team_input").val(),
+          'status_input': $("#status_input").val(),
+        },
+        url: "{{ route('buyer.search) }}",
+        success:function(data) {
+          $('.buyer_table tbody').html(data);
+        //   console.log(data);
+        }
+      });
+
+}
+
+
+//buyer search end
+
+
+//buyer add
 $("#save").click(function(e) {
     e.preventDefault();
     let data = {
@@ -51,7 +79,6 @@ $("#save").click(function(e) {
 
         }
     })
-
 })
 
 function showAllBuyer(){
@@ -75,5 +102,7 @@ function showAllBuyer(){
         }
     })
 }
+
+//buyer add end
 
 
