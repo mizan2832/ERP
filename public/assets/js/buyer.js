@@ -65,16 +65,15 @@ function showAllBuyer(){
             for (let i = 0; i < data.length; i++) {
                 let buyerRow = "<tr>";
                     buyerRow += "<td>" + data[i].full_name + "</td>";
-                    buyerRow += "<td>" + data[i].short_name + "</td>";
                     buyerRow += "<td>" + data[i].party_type + "</td>";
                     buyerRow += "<td>" + data[i].email + "</td>";
-                    buyerRow += "<td>" + data[i].address + "</td>";
                     buyerRow += "<td>" + data[i].team + "</td>";
                     buyerRow += "<td>" + data[i].status + "</td>";
                     buyerRow += "</tr>";
                     $('.buyer_table tbody').append(buyerRow);
-
                 }
         }
     })
 }
+
+
