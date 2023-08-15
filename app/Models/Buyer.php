@@ -11,22 +11,22 @@ class Buyer extends Model
     use HasFactory;
     public static function getBuyerList($full_name_input, $partyType_input, $email_input,$team_input,$status_input) {
         $buyers = DB::table('buyers');
-        if($full_name_input && $full_name_input!= GlobalConstraints::ALL) {
+        if($full_name_input) {
             $buyers = $buyers->where('buyers.full_name',  'like', "%{$full_name_input}%");
         }
-        if($partyType_input && $partyType_input!= GlobalConstraints::ALL) {
+        if($partyType_input) {
             $buyers = $buyers->where('buyers.party_type',  'like', "%{$partyType_input}%");
         }
-        if($email_input && $email_input!= GlobalConstraints::ALL) {
+        if($email_input) {
             $buyers = $buyers->where('buyers.email',  'like', "%{$email_input}%");
         }
-        if($team_input && $team_input!= GlobalConstraints::ALL) {
+        if($team_input) {
             $buyers = $buyers->where('buyers.team',  'like', "%{$team_input}%");
         }
-        if($status_input && $status_input!= GlobalConstraints::ALL) {
+        if($status_input) {
             $buyers = $buyers->where('buyers.status',  'like', "%{$status_input}%");
         }
 
-        return $buyers->paginate(3);
+        return $buyers;
     }
 }

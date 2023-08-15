@@ -18,10 +18,10 @@ function getBuyers() {
           'team_input': $("#team_input").val(),
           'status_input': $("#status_input").val(),
         },
-        url: "{{ route('buyer.search) }}",
+        url: "buyer/search",
         success:function(data) {
-          $('.buyer_table tbody').html(data);
-        //   console.log(data);
+        //   $('.buyer_table tbody').html(data);
+          console.log(data);
         }
       });
 
@@ -87,7 +87,6 @@ function showAllBuyer(){
         dataType:'JSON',
         url: "buyer/list",
         success:function(data){
-            console.log(data);
             $(".buyer_table tbody").html("");
             for (let i = 0; i < data.length; i++) {
                 let buyerRow = "<tr>";
