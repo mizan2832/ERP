@@ -22,7 +22,7 @@ $("#save").click(function(e) {
                 status:$("#status").val(),
                 partial:$("#partial").val(),
                 bank:$("#bank").val(),
-                team:$(" team").val()
+                team:$("#team").val()
 
             }
 
@@ -32,7 +32,6 @@ $("#save").click(function(e) {
         url     :'buyer/add',
         data    : data,
         success:function(response){
-            console.log(response);
             showAllBuyer();
             $("#full_name").val('');
             $("#short_name").val('');
@@ -60,8 +59,22 @@ function showAllBuyer(){
         type:"GET",
         dataType:'JSON',
         url: "buyer/list",
-        success:function(response){
-            console.log(response);
+        success:function(data){
+            console.log(data);
+            $(".buyer_table tbody").html("");
+            for (let i = 0; i < data.length; i++) {
+                let buyerRow = "<tr>";
+                    buyerRow += "<td>" + data[i].full_name + "</td>";
+                    buyerRow += "<td>" + data[i].short_name + "</td>";
+                    buyerRow += "<td>" + data[i].party_type + "</td>";
+                    buyerRow += "<td>" + data[i].email + "</td>";
+                    buyerRow += "<td>" + data[i].address + "</td>";
+                    buyerRow += "<td>" + data[i].team + "</td>";
+                    buyerRow += "<td>" + data[i].status + "</td>";
+                    buyerRow += "</tr>";
+                    $('.buyer_table tbody').append(buyerRow);
+
+                }
         }
     })
 }

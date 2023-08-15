@@ -246,7 +246,7 @@
         </div>
 
         <div class="save-button d-flex justify-content-center align-items-center g-2">
-            <button  value="save" id="save" class="btn btn-primary">Save</button>
+            <button  value="save" id="save" class="btn btn-secondary">Save</button>
             <button  value="info" id="info" class="btn btn-primary">Update</button>
             <button  value="delete" id="delete" class="btn btn-primary">Delete</button>
             <button  value="reset" id="reset" class="btn btn-primary">Reset</button>
@@ -256,7 +256,7 @@
 <div class="card form-buyer-list">
     <div class="container  ">
 
-        <table class="table table-bordered">
+        <table class="table table-bordered buyer_table">
           <thead>
             <tr>
               <th>SL</th>
@@ -268,9 +268,22 @@
               <th>Status</th>
             </tr>
           </thead>
-          <tbody class="buyer_table">
-
-
+          <tbody>
+            @php
+                $i=1;
+            @endphp
+            @foreach ($buyers as $b)
+                  <tr>
+                    <td>{{$i++}}</td>
+                    <td>{{$b->full_name}}</td>
+                    <td>{{$b->short_name}}</td>
+                    <td>{{$b->party_type}}</td>
+                    <td>{{$b->email}}</td>
+                    <td>{{$b->address}}</td>
+                    <td>{{$b->team}}</td>
+                    <td>{{$b->status}}</td>
+                  </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

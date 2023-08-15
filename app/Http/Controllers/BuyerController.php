@@ -19,18 +19,19 @@ class BuyerController extends Controller
     {
         $parties = Party::all();
         $countries = Country::all();
-        $countries = Country::all();
+        $buyers = Buyer::all();
         $groups = MerchandiserGroup::all();
         return view('pages.profile.buyer')
                                             ->withParties($parties)
                                             ->withCountries($countries)
+                                            ->withBuyers($buyers)
                                             ->withGroups($groups);
     }
 
     public function getAllBuyer()
     {
-        $buyer = Buyer::all();
-        return response()->json($buyer);
+        $buyers = Buyer::all();
+        return response()->json($buyers);
     }
 
     public function create()
@@ -63,8 +64,7 @@ class BuyerController extends Controller
         $buyer->bank = $request->bank;
         $buyer->team = $request->team;
         $buyer->save();
-
-        return response()->json($request);
+        return response()->json($buyer);
     }
 
     /**
