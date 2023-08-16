@@ -50,17 +50,17 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="inputPassword6" class="col-form-label">Contact Name</label>
+                                <label for="contact" class="col-form-label">Contact Name</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline">
+                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline" required>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="inputPassword6" class="col-form-label">Short Name</label>
+                                <label for="short" class="col-form-label">Short Name</label>
                             </div>
                             <div class="col-md-8">
                                 <input type="text"  name="short_name" id="short_name" class="form-control short_name" aria-describedby="passwordHelpInline">
@@ -82,7 +82,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="inputPassword6" class="col-form-label">Party Type</label>
+                                <label for="partyType" class="col-form-label">Party Type</label>
                             </div>
                             <div class="col-md-8">
                                 <select name="party_type" id="party_type" class="form-control">
@@ -97,7 +97,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="inputPassword6" class="col-form-label">Address</label>
+                                <label for="address" class="col-form-label">Address</label>
                             </div>
                             <div class="col-md-8">
                                 <input type="text" name="address" id="address" class="form-control" aria-describedby="passwordHelpInline">

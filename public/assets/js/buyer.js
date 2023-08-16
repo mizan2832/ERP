@@ -18,6 +18,7 @@ function getBuyers() {
         },
         url: "buyer/search",
         success:function(data) {
+            // console.log(data);
           $('.buyer_table tbody').html(data);
         }
       });
@@ -97,6 +98,20 @@ function showAllBuyer(){
     })
 }
 
+
 //buyer add end
+
+
+//buyer mandetory field
+
+$('label[for="contact"]').css('color','Green');
+$('label[for="short"]').css('color','Green');
+$('label[for="company"]').css('color','Green');
+$('label[for="partyType"]').css('color','Green');
+$('label[for="address"]').css('color','Green');
+$('label[for="company"]').css('color','Green');
+$('label[for="status"]').css('color','Green');
+
+
 
 

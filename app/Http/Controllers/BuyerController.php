@@ -39,6 +39,7 @@ class BuyerController extends Controller
 
         if($request->ajax()) {
             $buyers = Buyer::getBuyerList($full_name_input, $partyType_input, $email_input,$team_input,$status_input);
+            // return response()->json($buyers);
             if (empty($buyers)) {
                 $buyers = Buyer::all();
             }
