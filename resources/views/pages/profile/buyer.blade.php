@@ -27,7 +27,7 @@
             margin: -10px;
         }
          #full_name_input,#short_name_input,#partyType_input,#team_input,#email_input,#status_input{
-            width: 100px;
+            width: 150px;
             text-align: left;
             height: 30px;
             margin: -10px;
@@ -45,8 +45,6 @@
 
 @section('content')
 <div class="card form-buyer ">
-
-
         <div class="container-xxl flex-grow-1 container-p-y">
             <div class="row col-md-12 g-3   align-items-center">
                     <div class="col-md-4">
@@ -180,7 +178,6 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="inputPassword6" class="col-form-label">Http:://</label>
-
                             </div>
                             <div class="col-md-8">
                                 <input type="text" name="website" id="website" class="form-control" aria-describedby="passwordHelpInline">
@@ -192,7 +189,6 @@
                             <div class="col-md-4">
                                 <label for="status" class="col-form-label">Status</label>
                             </div>
-
                             <div class="col-md-8">
                                 <select name="status" id="status" class="form-control">
                                     <option value="" disabled>Select Status</option>
@@ -223,7 +219,6 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <label for="bank" class="col-form-label">Bank</label>
-
                             </div>
                             <div class="col-md-8">
                                 <select name="bank" id="bank" class="form-control">
@@ -284,17 +279,13 @@
 
             </thead>
             <tbody>
-
                 @include('pages.profile.buyer_table')
             </tbody>
         </table>
-
-
         @include('pages.profile.buyer_table')
       </div>
 </div>
 @endsection
-
 @push('js')
     <script src="{{ asset('assets/js/buyer.js') }}"></script>
 @endpush

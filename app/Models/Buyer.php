@@ -14,21 +14,23 @@ class Buyer extends Model
 
         if($full_name_input) {
             $buyers = Buyer::where('full_name','like','%'.$full_name_input.'%')->get();
+            return $buyers;
         }
-        if($partyType_input) {
+        else if($partyType_input) {
             $buyers = Buyer::where('party_type','like','%'.$partyType_input.'%')->get();
+            return $buyers;
         }
-        if($email_input) {
+        else if($email_input) {
             $buyers = Buyer::where('email','like','%'.$email_input.'%')->get();
         }
-        if($team_input) {
+        else if($team_input) {
             $buyers = Buyer::where('team','like','%'.$team_input.'%')->get();
+            return $buyers;
         }
-        if($status_input) {
+        else if($status_input) {
             $buyers = Buyer::where('status','like','%'.$status_input.'%')->get();
+            return $buyers;
         }
-       
 
-        return $buyers;
     }
 }

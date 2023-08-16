@@ -39,6 +39,9 @@ class BuyerController extends Controller
 
         if($request->ajax()) {
             $buyers = Buyer::getBuyerList($full_name_input, $partyType_input, $email_input,$team_input,$status_input);
+            if (empty($buyers)) {
+                $buyers = Buyer::all();
+            }
             return view('pages.profile.buyer_table', compact('buyers'))->render();
         }
     }

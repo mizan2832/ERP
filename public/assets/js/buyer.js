@@ -4,8 +4,6 @@ $.ajaxSetup({
     }
 });
 
-//buyer search start
-
 $('#full_name_input,#partyType_input,#team_input,#email_input,#status_input').on('keyup', function(){ getBuyers(); });
 
 function getBuyers() {
