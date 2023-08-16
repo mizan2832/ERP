@@ -23,10 +23,7 @@ function getBuyers() {
       });
 
 }
-
-
 //buyer search end
-
 
 //buyer add
 $("#save").click(function(e) {
