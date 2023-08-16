@@ -20,10 +20,6 @@
             margin-right: 10px;
         }
 
-        #country{
-            width:
-        }
-
          #serial{
             width: 50px;
             text-align: left;
@@ -267,6 +263,32 @@
 </div>
 <div class="card form-buyer-list">
     <div class="container  ">
+        <table class="table table-bordered buyer_table">
+            <thead>
+            <tr>
+                <th>SL</th>
+                <th>Name</th>
+                <th>Party Type</th>
+                <th>Email</th>
+                <th>Team</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+              <th><input type="text" class="form-control" id="serial"></th>
+              <th><input type="text" class="form-control" id="full_name_input"></th>
+              <th><input type="text" class="form-control" id="partyType_input"></th>
+              <th><input type="text" class="form-control" id="email_input"></th>
+              <th><input type="text" class="form-control" id="team_input"></th>
+              <th><input type="text" class="form-control" id="status_input"></th>
+            </tr>
+
+            </thead>
+            <tbody>
+
+                @include('pages.profile.buyer_table')
+            </tbody>
+        </table>
+
 
         @include('pages.profile.buyer_table')
       </div>

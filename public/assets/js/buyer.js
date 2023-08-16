@@ -20,8 +20,7 @@ function getBuyers() {
         },
         url: "buyer/search",
         success:function(data) {
-        //   $('.buyer_table tbody').html(data);
-          console.log(data);
+          $('.buyer_table tbody').html(data);
         }
       });
 

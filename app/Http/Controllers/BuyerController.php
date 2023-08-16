@@ -17,11 +17,10 @@ class BuyerController extends Controller
         $countries = Country::all();
         $buyers = Buyer::all();
         $groups = MerchandiserGroup::all();
-        return view('pages.profile.buyer')
-                                            ->withParties($parties)
-                                            ->withCountries($countries)
-                                            ->withBuyers($buyers)
-                                            ->withGroups($groups);
+        return view('pages.profile.buyer')->withParties($parties)
+                                          ->withCountries($countries)
+                                          ->withBuyers($buyers)
+                                          ->withGroups($groups);
     }
 
     public function getAllBuyer()
@@ -40,8 +39,6 @@ class BuyerController extends Controller
 
         if($request->ajax()) {
             $buyers = Buyer::getBuyerList($full_name_input, $partyType_input, $email_input,$team_input,$status_input);
-            // return response()->json($request);
-
             return view('pages.profile.buyer_table', compact('buyers'))->render();
         }
     }
