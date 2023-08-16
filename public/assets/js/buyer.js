@@ -87,6 +87,7 @@ function showAllBuyer(){
             $(".buyer_table tbody").html("");
             for (let i = 0; i < data.length; i++) {
                 let buyerRow = "<tr>";
+                    buyerRow += "<td>" + (++i) + "</td>";
                     buyerRow += "<td>" + data[i].full_name + "</td>";
                     buyerRow += "<td>" + data[i].party_type + "</td>";
                     buyerRow += "<td>" + data[i].email + "</td>";
