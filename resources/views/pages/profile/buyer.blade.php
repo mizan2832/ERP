@@ -53,7 +53,7 @@
                                 <label for="contact" class="col-form-label">Contact Name</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline" required>
+                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline"  data-parsley-maxlength="42"  required>
                             </div>
                         </div>
                     </div>
@@ -288,5 +288,12 @@
 @endsection
 @push('js')
     <script src="{{ asset('assets/js/buyer.js') }}"></script>
+    <script
+   src="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/dist/parsley.js"></script>
+
+   <script>
+         $('#full_name').parsley();
+   </script>
+
 @endpush
 
