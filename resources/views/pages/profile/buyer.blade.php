@@ -251,9 +251,11 @@
 
         <div class="save-button d-flex justify-content-center align-items-center g-2">
             <button  value="save" id="save" >Save</button>
-            <button  value="info" id="update" disabled='disabled'>Update</button>
+            <button  value="info" id="update" onclick="updateBuyer()" disabled='disabled'>Update</button>
             <button  value="delete" id="delete">Delete</button>
             <button  value="reset" id="reset">Reset</button>
+
+            <input type="text" id="update_id" value="" hidden>
         </div>
 </div>
 <div class="card form-buyer-list">

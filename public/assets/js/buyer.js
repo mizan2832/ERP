@@ -8,9 +8,6 @@ $('#full_name_input,#partyType_input,#team_input,#email_input,#status_input').on
 
 function getBuyers() {
     $full_name_input = $('#full_name_input').val();
-
-        console.log(typeof $full_name_input);
-
     $.ajax({
         type: "GET",
         data: {
@@ -86,9 +83,10 @@ function showAllBuyer(){
         dataType:'JSON',
         url: "buyer/list",
         success:function(data){
+            console.log(data);
             $(".buyer_table tbody").html("");
             for (let i = 0; i < data.length; i++) {
-                let buyerRow = "<tr onclick=fetchBuyer("+ data.id+ ")>";
+                let buyerRow = "<tr onclick=fetchBuyer("+ data[i].id+ ")>";
                     buyerRow += "<td>" + (++i) + "</td>";
                     buyerRow += "<td>" + data[i].full_name + "</td>";
                     buyerRow += "<td>" + data[i].party_type + "</td>";
@@ -141,11 +139,73 @@ function fetchBuyer($id) {
             $("#bank").val(response.bank);
             $("#team").val(response.team);
 
+            $("#update_id").val(response.id);
+
+            document.querySelector('#update').disabled = false;
+
+
         }
     })
 }
 
 //end fetch data on click row
+
+//update buyer
+
+function updateBuyer() {
+    let id = $("#update_id").val();
+    let data = {
+        "_token": $('#token').val(),
+       id : id,
+       full_name:$("#full_name").val(),
+       short_name:$("#short_name").val(),
+       email:$("#email").val(),
+       party_type:$("#party_type").val(),
+       address:$("#address").val(),
+       tag_company:$("#tag_company").val(),
+       credit_limit:$("#credit_limit").val(),
+       supplier:$("#supplier").val(),
+       country:$("#country").val(),
+       buffer_days:$("#buffer_days").val(),
+       website:$("#website").val(),
+       status:$("#status").val(),
+       partial:$("#partial").val(),
+       bank:$("#bank").val(),
+       team:$("#team").val()
+
+   }
+    $.ajax({
+        method:"PUT",
+        dataType:'JSON',
+        url: "buyer/update",
+        data: data,
+        success:function(response) {
+            console.log(response);
+            showAllBuyer();
+            $("#full_name").val("");
+            $("#short_name").val("");
+            $("#email").val("");
+            $("#party_type").val("");
+            $("#address").val("");
+            $("#tag_company").val("");
+            $("#credit_limit").val("");
+            $("#supplier").val("");
+            $("#country").val("");
+            $("#buffer_days").val("");
+            $("#website").val("");
+            $("#status").val("");
+            $("#partial").val("");
+            $("#bank").val("");
+            $("#team").val("");
+            $("#update_id").val("");
+            document.querySelector('#update').disabled = true;
+
+
+        }
+    })
+}
+
+//end update buyer
 
 
 

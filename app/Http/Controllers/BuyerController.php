@@ -115,9 +115,27 @@ class BuyerController extends Controller
      * @param  \App\Models\Buyer  $buyer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Buyer $buyer)
+    public function update(Request $request)
     {
-        //
+        $buyer = Buyer::find($request->id);
+
+        $buyer->full_name = $request->full_name;
+        $buyer->short_name = $request->short_name;
+        $buyer->email = $request->email;
+        $buyer->party_type = $request->party_type;
+        $buyer->address = $request->address;
+        $buyer->tag_company = $request->tag_company;
+        $buyer->credit_limit = $request->credit_limit;
+        $buyer->supplier = $request->supplier;
+        $buyer->country = $request->country;
+        $buyer->buffer_days = $request->buffer_days;
+        $buyer->web = $request->website;
+        $buyer->status = $request->status;
+        $buyer->partial = $request->partial;
+        $buyer->bank = $request->bank;
+        $buyer->team = $request->team;
+        $buyer->save();
+        return response()->json($buyer);
     }
 
     /**

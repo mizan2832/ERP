@@ -19,6 +19,7 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
     Route::get('/buyer/list', [BuyerController::class, 'getAllBuyer'])->name('buyer.list');
     Route::get('/buyer/search', [BuyerController::class, 'getBuyerSearch'])->name('buyer.search');
     Route::get('/buyer/fetch', [BuyerController::class, 'buyerFetch'])->name('buyer.fetch');
+    Route::put('/buyer/update', [BuyerController::class, 'update'])->name('buyer.update');
 
     //party route
 
