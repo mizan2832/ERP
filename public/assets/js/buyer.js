@@ -7,10 +7,14 @@ $.ajaxSetup({
 $('#full_name_input,#partyType_input,#team_input,#email_input,#status_input').on('keyup', function(){ getBuyers(); });
 
 function getBuyers() {
+    $full_name_input = $('#full_name_input').val();
+
+        console.log(typeof $full_name_input);
+
     $.ajax({
         type: "GET",
         data: {
-          'full_name_input':$('#full_name_input').val(),
+          'full_name_input': $full_name_input,
           'partyType_input': $("#partyType_input").val(),
           'email_input': $("#email_input").val(),
           'team_input': $("#team_input").val(),
@@ -84,7 +88,7 @@ function showAllBuyer(){
         success:function(data){
             $(".buyer_table tbody").html("");
             for (let i = 0; i < data.length; i++) {
-                let buyerRow = "<tr>";
+                let buyerRow = "<tr onclick=fetchBuyer("+ data.id+ ")>";
                     buyerRow += "<td>" + (++i) + "</td>";
                     buyerRow += "<td>" + data[i].full_name + "</td>";
                     buyerRow += "<td>" + data[i].party_type + "</td>";
@@ -112,6 +116,36 @@ $('label[for="address"]').css('color','Green');
 $('label[for="company"]').css('color','Green');
 $('label[for="status"]').css('color','Green');
 
+//start fetch data on click row
+
+function fetchBuyer($id) {
+    $.ajax({
+        method:"GET",
+        dataType:'JSON',
+        url: "buyer/fetch",
+        data:{id:$id},
+        success:function(response) {
+            $("#full_name").val(response.full_name);
+            $("#short_name").val(response.short_name);
+            $("#email").val(response.email);
+            $("#party_type").val(response.party_type);
+            $("#address").val(response.address);
+            $("#tag_company").val(response.tag_company);
+            $("#credit_limit").val(response.credit_limit);
+            $("#supplier").val(response.supplier);
+            $("#country").val(response.country);
+            $("#buffer_days").val(response.buffer_days);
+            $("#website").val(response.web);
+            $("#status").val(response.status);
+            $("#partial").val(response.partial);
+            $("#bank").val(response.bank);
+            $("#team").val(response.team);
+
+        }
+    })
+}
+
+//end fetch data on click row
 
 
 

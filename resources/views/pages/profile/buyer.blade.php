@@ -250,10 +250,10 @@
         </div>
 
         <div class="save-button d-flex justify-content-center align-items-center g-2">
-            <button  value="save" id="save" class="btn btn-secondary">Save</button>
-            <button  value="info" id="info" class="btn btn-primary">Update</button>
-            <button  value="delete" id="delete" class="btn btn-primary">Delete</button>
-            <button  value="reset" id="reset" class="btn btn-primary">Reset</button>
+            <button  value="save" id="save" >Save</button>
+            <button  value="info" id="update" disabled='disabled'>Update</button>
+            <button  value="delete" id="delete">Delete</button>
+            <button  value="reset" id="reset">Reset</button>
         </div>
 </div>
 <div class="card form-buyer-list">
@@ -290,10 +290,6 @@
     <script src="{{ asset('assets/js/buyer.js') }}"></script>
     <script
    src="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/dist/parsley.js"></script>
-
-   <script>
-         $('#full_name').parsley();
-   </script>
 
 @endpush
 
