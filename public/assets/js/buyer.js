@@ -180,7 +180,6 @@ function updateBuyer() {
         url: "buyer/update",
         data: data,
         success:function(response) {
-            console.log(response);
             showAllBuyer();
             $("#full_name").val("");
             $("#short_name").val("");
