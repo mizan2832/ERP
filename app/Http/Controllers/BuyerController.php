@@ -7,6 +7,7 @@ use App\Models\Party;
 use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Models\MerchandiserGroup;
+use Illuminate\Support\Facades\DB;
 
 class BuyerController extends Controller
 {
@@ -39,12 +40,8 @@ class BuyerController extends Controller
 
         if($request->ajax()) {
             $buyers = Buyer::getBuyerList($full_name_input, $partyType_input, $email_input,$team_input,$status_input);
-            if (empty($buyers)) {
-                $buyers = Buyer::all();
-                return view('pages.profile.buyer_table', compact('buyers'))->render();
-            }else{
-                return view('pages.profile.buyer_table', compact('buyers'))->render();
-            }
+             return view('pages.profile.buyer_table', compact('buyers'))->render();
+
         }
     }
 
@@ -144,8 +141,9 @@ class BuyerController extends Controller
      * @param  \App\Models\Buyer  $buyer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Buyer $buyer)
+    public function destroy($id)
     {
-        //
+        $buyer = DB::table('buyers')->where('id', '=', $id)->delete();
+        return response()->json($buyer);
     }
 }

@@ -83,11 +83,11 @@ function showAllBuyer(){
         dataType:'JSON',
         url: "buyer/list",
         success:function(data){
-            console.log(data);
             $(".buyer_table tbody").html("");
+            var se = 1;
             for (let i = 0; i < data.length; i++) {
-                let buyerRow = "<tr onclick=fetchBuyer("+ data[i].id+ ")>";
-                    buyerRow += "<td>" + (++i) + "</td>";
+                let buyerRow = "<tr onclick=fetchBuyer("+ data[i].id +")>";
+                    buyerRow += "<td>" + (se++) + "</td>";
                     buyerRow += "<td>" + data[i].full_name + "</td>";
                     buyerRow += "<td>" + data[i].party_type + "</td>";
                     buyerRow += "<td>" + data[i].email + "</td>";
@@ -139,9 +139,10 @@ function fetchBuyer($id) {
             $("#bank").val(response.bank);
             $("#team").val(response.team);
 
-            $("#update_id").val(response.id);
+            $("#row_id").val(response.id);
 
             document.querySelector('#update').disabled = false;
+            document.querySelector('#delete').disabled = false;
 
 
         }
@@ -153,7 +154,7 @@ function fetchBuyer($id) {
 //update buyer
 
 function updateBuyer() {
-    let id = $("#update_id").val();
+    let id = $("#row_id").val();
     let data = {
         "_token": $('#token').val(),
        id : id,
@@ -196,8 +197,39 @@ function updateBuyer() {
             $("#partial").val("");
             $("#bank").val("");
             $("#team").val("");
-            $("#update_id").val("");
+            $("#row_id").val("");
             document.querySelector('#update').disabled = true;
+
+
+        }
+    })
+}
+function deleteBuyer() {
+    let id = $("#row_id").val();
+
+    $.ajax({
+        method:"DELETE",
+        dataType:'JSON',
+        url: "buyer/delete/"+id,
+        success:function(response) {
+            showAllBuyer();
+            $("#full_name").val("");
+            $("#short_name").val("");
+            $("#email").val("");
+            $("#party_type").val("");
+            $("#address").val("");
+            $("#tag_company").val("");
+            $("#credit_limit").val("");
+            $("#supplier").val("");
+            $("#country").val("");
+            $("#buffer_days").val("");
+            $("#website").val("");
+            $("#status").val("");
+            $("#partial").val("");
+            $("#bank").val("");
+            $("#team").val("");
+            $("#row_id").val("");
+            document.querySelector('#delete').disabled = true;
 
 
         }
@@ -205,6 +237,31 @@ function updateBuyer() {
 }
 
 //end update buyer
+
+//refresh statt
+
+function resetFormBuyer() {
+            showAllBuyer();
+            $("#full_name").val("");
+            $("#short_name").val("");
+            $("#email").val("");
+            $("#party_type").val("");
+            $("#address").val("");
+            $("#tag_company").val("");
+            $("#credit_limit").val("");
+            $("#supplier").val("");
+            $("#country").val("");
+            $("#buffer_days").val("");
+            $("#website").val("");
+            $("#status").val("");
+            $("#partial").val("");
+            $("#bank").val("");
+            $("#team").val("");
+            $("#row_id").val("");
+        }
+  
+
+//refresh end
 
 
 
