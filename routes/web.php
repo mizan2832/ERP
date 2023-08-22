@@ -1,8 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\SupplierController;
 
 Auth::routes();
 Route::get('/',function(){
@@ -22,7 +23,10 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
     Route::put('/buyer/update', [BuyerController::class, 'update'])->name('buyer.update');
     Route::delete('/buyer/delete/{id}', [BuyerController::class, 'destroy'])->name('buyer.delete');
 
-    //party route
+    //supplier route
+
+    Route::resource('/supplier',SupplierController::class);
+
 
 
 });

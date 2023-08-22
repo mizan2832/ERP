@@ -30,7 +30,7 @@
             </a>
           </li>
           <li class="menu-item {{ Route::currentRouteNamed('supplier') ? 'active' : '' }}">
-            <a href="layouts-without-navbar.html" class="menu-link">
+            <a href="{{ route('admin.supplier.index') }}" class="menu-link">
               <div data-i18n="Without navbar">Supplier</div>
             </a>
           </li>
