@@ -124,7 +124,7 @@
                     <a class="nav-link" href="#">Approval</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="">Admin</a>
+                    <a class=" " href="">Admin</a>
                   </li>
                 </ul>
               </div>
@@ -219,6 +219,6 @@
             <!-- Footer -->
            @include('includes.footer')
 
-           
+
   </body>
 </html>
