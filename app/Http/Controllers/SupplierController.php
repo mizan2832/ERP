@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Country;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -11,7 +12,8 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        return view('pages.profile.supplier.supplier');
+        $countries = Country::all();
+        return view('pages.profile.supplier.supplier')->withCountries($countries);
     }
 
     /**

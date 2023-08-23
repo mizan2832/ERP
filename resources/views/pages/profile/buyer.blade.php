@@ -258,7 +258,7 @@
             <input type="text" id="row_id" value="" hidden>
         </div>
 </div>
-<div class="card form-buyer-list">
+<div class="card ">
     <div class="container  ">
         <table class="table table-bordered buyer_table">
             <thead>
@@ -284,7 +284,7 @@
                 @include('pages.profile.buyer_table')
             </tbody>
         </table>
-        @include('pages.profile.buyer_table')
+
       </div>
 </div>
 @endsection
