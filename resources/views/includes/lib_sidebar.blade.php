@@ -44,7 +44,7 @@
 
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
+            <a href="{{ route('admin.itemGroup.index') }}" class="menu-link">
               <div data-i18n="Without menu">Item Group</div>
             </a>
           </li>

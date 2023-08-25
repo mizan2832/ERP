@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\SupplierController;
+use App\Http\Controllers\ItemGroupController;
 
 Auth::routes();
 Route::get('/',function(){
@@ -26,6 +27,7 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
     //supplier route
 
     Route::resource('/supplier',SupplierController::class);
+    Route::resource('/itemGroup',ItemGroupController::class);
 
 
 

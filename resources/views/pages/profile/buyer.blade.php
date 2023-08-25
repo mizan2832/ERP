@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-md-8">
                                 <select name="party_type" id="party_type" class="form-control">
-                                    <option value="" >Select Party</option>
+                                    <option value="" >Select Party <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     @foreach ($parties as $party)
                                         <option value="{{ $party->id }}">{{ $party->name }}</option>
                                     @endforeach
@@ -112,7 +112,7 @@
 
                             <div class="col-md-8">
                                 <select name="tag_company" id="tag_company" class="form-control">
-                                    <option value="" >Select Company</option>
+                                    <option value="" >Select Company <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     <option value="rjl">Radiance Jeans Ltd.</option>
                                     <option value="rfl">Radiance Fashon Ltd.</option>
                                 </select>
@@ -153,7 +153,7 @@
 
                             <div class="col-md-8">
                                 <select name="country" id="country" class="form-control">
-                                    <option value="">Select Country</option>
+                                    <option value="">Select Country <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     @foreach ($countries as $country)
                                          <option value="{{ $country->code }}">{{ $country->name }}</option>
                                      @endforeach
@@ -191,7 +191,6 @@
                             </div>
                             <div class="col-md-8">
                                 <select name="status" id="status" class="form-control">
-                                    <option value="" disabled>Select Status</option>
                                     <option value="1">Active</option>
                                     <option value="2">Inactive</option>
                                 </select>
@@ -208,7 +207,7 @@
                             </div>
                             <div class="col-md-8">
                                 <select name="partial" id="partial" class="form-control">
-                                    <option value="">Select</option>
+                                    <option value="">Select <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     <option value="1">YES</option>
                                     <option value="2">NO</option>
                                 </select>
@@ -222,7 +221,7 @@
                             </div>
                             <div class="col-md-8">
                                 <select name="bank" id="bank" class="form-control">
-                                    <option value="">Select Bank </option>
+                                    <option value="">Select Bank <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     <option value="sb">South Bank</option>
                                     <option value="ab">AB Bank</option>
                                 </select>
@@ -237,7 +236,7 @@
 
                             <div class="col-md-8">
                                 <select name="team" id="team" class="form-control">
-                                    <option value="">Select Team</option>
+                                    <option value="">Select Team <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     @foreach ($groups as $g)
                                         <option value="{{ $g->id }}">{{ $g->name }}</option>
                                     @endforeach
