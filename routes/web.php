@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
+use App\Http\Controllers\ItemAccountCreateController;
 
 Auth::routes();
 Route::get('/',function(){
@@ -27,7 +28,8 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
     //supplier route
 
     Route::resource('/supplier',SupplierController::class);
-    Route::resource('/itemGroup',ItemGroupController::class);
+    Route::resource('/item-group',ItemGroupController::class);
+    Route::resource('/item-account',ItemAccountCreateController::class);
 
 
 

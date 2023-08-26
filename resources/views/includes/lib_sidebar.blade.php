@@ -44,12 +44,12 @@
 
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="{{ route('admin.itemGroup.index') }}" class="menu-link">
+            <a href="{{ route('admin.item-group.index') }}" class="menu-link">
               <div data-i18n="Without menu">Item Group</div>
             </a>
           </li>
           <li class="menu-item">
-            <a href="layouts-without-navbar.html" class="menu-link">
+            <a href="{{ route('admin.item-account.index') }}" class="menu-link">
               <div data-i18n="Without navbar">Item Account Creation</div>
             </a>
           </li>

@@ -53,7 +53,7 @@
                                 <label for="contact" class="col-form-label">Contact Name</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline"  data-parsley-maxlength="42"  required>
+                                <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline"  data-parsley-maxlength="42" onkeyup="this.value = this.value.replace(/[`~#$^&*()_|\(\)\\]/gi, '')" title="Maximum 250 Character;  Allowed Characters: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-,%@!/<>?+[]{};: " autocomplete="off"  required>
                             </div>
                         </div>
                     </div>
