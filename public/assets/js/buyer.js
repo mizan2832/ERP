@@ -42,7 +42,7 @@ $("#save").click(function(e) {
                 supplier:$("#supplier").val(),
                 country:$("#country").val(),
                 buffer_days:$("#buffer_days").val(),
-                website:$("#website").val(),
+                web:$("#web").val(),
                 status:$("#status").val(),
                 partial:$("#partial").val(),
                 bank:$("#bank").val(),
@@ -67,12 +67,18 @@ $("#save").click(function(e) {
             $("#supplier").val('');
             $("#country").val('');
             $("#buffer_days").val('');
-            $("#website").val('');
+            $("#web").val('');
             $("#status").val('');
             $("#partial").val('');
             $("#bank").val('');
             $("#team").val('');
 
+        },
+        error : function(data,data1) {
+            let response = data.responseJSON;
+            let all_errors = response.errors;
+
+            console.log('all_errors',all_errors.tag_company[0]);
         }
     })
 })
@@ -133,7 +139,7 @@ function fetchBuyer($id) {
             $("#supplier").val(response.supplier);
             $("#country").val(response.country);
             $("#buffer_days").val(response.buffer_days);
-            $("#website").val(response.web);
+            $("#web").val(response.web);
             $("#status").val(response.status);
             $("#partial").val(response.partial);
             $("#bank").val(response.bank);
@@ -168,7 +174,7 @@ function updateBuyer() {
        supplier:$("#supplier").val(),
        country:$("#country").val(),
        buffer_days:$("#buffer_days").val(),
-       website:$("#website").val(),
+       web:$("#web").val(),
        status:$("#status").val(),
        partial:$("#partial").val(),
        bank:$("#bank").val(),
@@ -192,7 +198,7 @@ function updateBuyer() {
             $("#supplier").val("");
             $("#country").val("");
             $("#buffer_days").val("");
-            $("#website").val("");
+            $("#web").val("");
             $("#status").val("");
             $("#partial").val("");
             $("#bank").val("");
@@ -223,7 +229,7 @@ function deleteBuyer() {
             $("#supplier").val("");
             $("#country").val("");
             $("#buffer_days").val("");
-            $("#website").val("");
+            $("#web").val("");
             $("#status").val("");
             $("#partial").val("");
             $("#bank").val("");
@@ -252,14 +258,14 @@ function resetFormBuyer() {
             $("#supplier").val("");
             $("#country").val("");
             $("#buffer_days").val("");
-            $("#website").val("");
+            $("#web").val("");
             $("#status").val("");
             $("#partial").val("");
             $("#bank").val("");
             $("#team").val("");
             $("#row_id").val("");
         }
-  
+
 
 //refresh end
 

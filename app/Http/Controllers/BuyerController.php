@@ -8,6 +8,7 @@ use App\Models\Country;
 use Illuminate\Http\Request;
 use App\Models\MerchandiserGroup;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class BuyerController extends Controller
 {
@@ -63,6 +64,24 @@ class BuyerController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'full_name' => 'required|unique:buyers',
+            'short_name' => 'required|unique:buyers',
+            'party_type' => 'required',
+            'tag_company' => 'required',
+            'address' => 'required',
+            'status' => 'required',
+        ]);
+
+        if($validator->fails())
+        {
+            return response()->json([
+                'success'=>false,
+                'errors'=>($validator->getMessageBag()->toArray()),
+            ],400);
+        }
+
+
         $buyer = new Buyer();
         $buyer->full_name = $request->full_name;
         $buyer->short_name = $request->short_name;
@@ -74,7 +93,7 @@ class BuyerController extends Controller
         $buyer->supplier = $request->supplier;
         $buyer->country = $request->country;
         $buyer->buffer_days = $request->buffer_days;
-        $buyer->web = $request->website;
+        $buyer->web = $request->web;
         $buyer->status = $request->status;
         $buyer->partial = $request->partial;
         $buyer->bank = $request->bank;

@@ -54,7 +54,9 @@
                             </div>
                             <div class="col-md-8">
                                 <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline"  data-parsley-maxlength="42" onkeyup="this.value = this.value.replace(/[`~#$^&*()_|\(\)\\]/gi, '')" title="Maximum 250 Character;  Allowed Characters: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-,%@!/<>?+[]{};: " autocomplete="off"  required>
+                                <span class="alert full_name_error" style="color: red;"> This field is required</span>
                             </div>
+
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -64,6 +66,7 @@
                             </div>
                             <div class="col-md-8">
                                 <input type="text"  name="short_name" id="short_name" class="form-control short_name" aria-describedby="passwordHelpInline">
+                                <span class="alert short_name_error" style="color: red;"> This field is required</span>
                             </div>
                         </div>
                     </div>
@@ -91,6 +94,8 @@
                                         <option value="{{ $party->id }}">{{ $party->name }}</option>
                                     @endforeach
                                 </select>
+                                <span class="alert party_type_error" style="color: red;"> This field is required</span>
+
                             </div>
                         </div>
                     </div>
@@ -101,6 +106,8 @@
                             </div>
                             <div class="col-md-8">
                                 <input type="text" name="address" id="address" class="form-control" aria-describedby="passwordHelpInline">
+                                <span class="alert address_error" style="color: red;"> This field is required</span>
+
                             </div>
                         </div>
                     </div>
@@ -116,6 +123,8 @@
                                     <option value="rjl">Radiance Jeans Ltd.</option>
                                     <option value="rfl">Radiance Fashon Ltd.</option>
                                 </select>
+                                <span class="alert tag_company_error" style="color: red;"> This field is required</span>
+
                             </div>
                         </div>
                     </div>
@@ -180,7 +189,7 @@
                                 <label for="inputPassword6" class="col-form-label">Http:://</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" name="website" id="website" class="form-control" aria-describedby="passwordHelpInline">
+                                <input type="text" name="web" id="web" class="form-control" aria-describedby="passwordHelpInline">
                             </div>
                         </div>
                     </div>
@@ -194,6 +203,8 @@
                                     <option value="1">Active</option>
                                     <option value="2">Inactive</option>
                                 </select>
+                                <span class="alert status_error" style="color: red;"> This field is required</span>
+
                             </div>
 
                         </div>
