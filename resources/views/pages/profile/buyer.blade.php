@@ -54,7 +54,7 @@
                             </div>
                             <div class="col-md-8">
                                 <input type="text"  name="full_name" id="full_name" class="form-control " aria-describedby="passwordHelpInline"  data-parsley-maxlength="42" onkeyup="this.value = this.value.replace(/[`~#$^&*()_|\(\)\\]/gi, '')" title="Maximum 250 Character;  Allowed Characters: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-,%@!/<>?+[]{};: " autocomplete="off"  required>
-                                <span class="alert full_name_error" style="color: red;"> This field is required</span>
+                                <span class="alert full_name_error" style="color: red;"> </span>
                             </div>
 
                         </div>
@@ -65,8 +65,8 @@
                                 <label for="short" class="col-form-label">Short Name</label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text"  name="short_name" id="short_name" class="form-control short_name" aria-describedby="passwordHelpInline">
-                                <span class="alert short_name_error" style="color: red;"> This field is required</span>
+                                <input type="text"  name="short_name" id="short_name" class="form-control short_name" onkeyup="this.value = this.value.replace(/[`~#$^&*()_|\(\)\\]/gi, '')" title="Maximum 250 Character;  Allowed Characters: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890.-,%@!/<>?+[]{};: " aria-describedby="passwordHelpInline">
+                                <span class="alert short_name_error" style="color: red;"> </span>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                                         <option value="{{ $party->id }}">{{ $party->name }}</option>
                                     @endforeach
                                 </select>
-                                <span class="alert party_type_error" style="color: red;"> This field is required</span>
+                                <span class="alert party_type_error" style="color: red;"> </span>
 
                             </div>
                         </div>
@@ -106,7 +106,7 @@
                             </div>
                             <div class="col-md-8">
                                 <input type="text" name="address" id="address" class="form-control" aria-describedby="passwordHelpInline">
-                                <span class="alert address_error" style="color: red;"> This field is required</span>
+                                <span class="alert address_error" style="color: red;"> </span>
 
                             </div>
                         </div>
@@ -123,7 +123,7 @@
                                     <option value="rjl">Radiance Jeans Ltd.</option>
                                     <option value="rfl">Radiance Fashon Ltd.</option>
                                 </select>
-                                <span class="alert tag_company_error" style="color: red;"> This field is required</span>
+                                <span class="alert tag_company_error" style="color: red;"> </span>
 
                             </div>
                         </div>
@@ -203,7 +203,7 @@
                                     <option value="1">Active</option>
                                     <option value="2">Inactive</option>
                                 </select>
-                                <span class="alert status_error" style="color: red;"> This field is required</span>
+                                <span class="alert status_error" style="color: red;"> </span>
 
                             </div>
 
@@ -302,6 +302,5 @@
     <script src="{{ asset('assets/js/buyer.js') }}"></script>
     <script
    src="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/dist/parsley.js"></script>
-
 @endpush
 

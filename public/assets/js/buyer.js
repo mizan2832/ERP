@@ -28,6 +28,9 @@ function getBuyers() {
 //buyer search end
 
 //buyer add
+
+
+
 $("#save").click(function(e) {
     e.preventDefault();
     let data = {
@@ -78,7 +81,14 @@ $("#save").click(function(e) {
             let response = data.responseJSON;
             let all_errors = response.errors;
 
-            console.log('all_errors',all_errors.tag_company[0]);
+            Object.keys(all_errors).forEach(key => {
+                var locate_this = all_errors[key].toString().indexOf("field");
+                var mess = all_errors[key].toString();
+                // console.log(mess);
+                $("."+key+"_error").append("! This " + mess.slice(locate_this,all_errors[key].toString().length));
+                console.log(key, all_errors[key]);
+              });
+
         }
     })
 })
