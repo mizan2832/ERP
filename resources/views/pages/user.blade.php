@@ -1,8 +1,8 @@
 @extends('master')
-@section('title','Library')
+@section('title','User Management')
 
 @section('sidebar')
-   @include('includes.lib_sidebar')
+   @include('includes.admin_sidebar')
 @endsection
 
 @section('content')

@@ -124,7 +124,7 @@
                     <a class="nav-link" href="#">Approval</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="">Admin</a>
+                    <a class="nav-link" href="{{ route('admin.admin') }}">Admin</a>
                   </li>
                 </ul>
               </div>

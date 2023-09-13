@@ -32,6 +32,11 @@ Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group
     Route::resource('/item-account',ItemAccountCreateController::class);
 
 
+    Route::get('/user-management', function () {
+        return view('pages.user');
+    })->name('admin');
+
+
 
 });
 

@@ -19,7 +19,6 @@
         .save-button input{
             margin-right: 10px;
         }
-
          #serial{
             width: 50px;
             text-align: left;
@@ -264,7 +263,6 @@
             <button  value="info" id="update" onclick="updateBuyer()" disabled='disabled'>Update</button>
             <button  value="delete" id="delete" onclick="deleteBuyer()" disabled='disabled'>Delete</button>
             <button  value="reset" id="reset" onclick="resetFormBuyer()">Refresh</button>
-
             <input type="text" id="row_id" value="" hidden>
         </div>
 </div>
@@ -302,5 +300,6 @@
     <script src="{{ asset('assets/js/buyer.js') }}"></script>
     <script
    src="https://cdn.jsdelivr.net/gh/guillaumepotier/Parsley.js@2.9.2/dist/parsley.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 @endpush
 
