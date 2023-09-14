@@ -10,9 +10,9 @@ use App\Http\Controllers\ItemAccountCreateController;
 Auth::routes();
 Route::get('/',function(){
     return view('pages.home');
-})->middleware(['auth','role:admin'])->name('admin.index');
+})->middleware(['auth','admin'])->name('admin.index');
 
-Route::middleware(['auth','role:admin'])->name('admin.')->prefix('admin')->group(function() {
+Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(function() {
 
     Route::get('/library', function () {
         return view('pages.library');
