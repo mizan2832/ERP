@@ -21,12 +21,13 @@ return new class extends Migration
             $table->string('password');
             $table->integer('designation_id');
             $table->integer('department_id');
-            $table->integer('role_level');
+            $table->unsignedBigInteger('role_level');
             $table->integer('unit_id');
             $table->integer('buyer_id');
             $table->integer('data_access_level');
             $table->boolean('status');
             $table->timestamp('email_verified_at')->nullable();
+            $table->foreign('role_level')->references('id')->on('roles')->onDelete('cascade');
             $table->rememberToken();
             $table->timestamps();
         });
