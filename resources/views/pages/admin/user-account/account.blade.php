@@ -33,7 +33,10 @@
         width:
     }
     #user_serial{
-        width:30px;
+        width:70px;
+    }
+    input[type="button"]{
+
     }
 
 
@@ -58,7 +61,6 @@
                     </div>
                     <div class="col-md-8">
                         <input type="text"  name="user_id" id="user_id" class="form-control"  required>
-
                     </div>
                 </div>
                 <div class="row">
@@ -142,7 +144,7 @@
                         <label for="contact" class="col-form-label">Unit Name</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text" name="unit_name" class="form-control" id="unit_name" placeholder="Double Click">
+                        <input type="button" name="unit_name" class="form-control" id="unit_name" value="**Double Click**">
                     </div>
                 </div>
 
@@ -151,7 +153,7 @@
                         <label for="contact" class="col-form-label">Buyer Name</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text"  name="buyer_name" id="buyer_name" class="form-control" placeholder="Double Click"  required>
+                        <input type="button"  name="buyer_name" id="buyer_name" class="form-control" value="**Double Click**"  required>
                     </div>
                 </div>
                 <div class="row">
@@ -167,16 +169,17 @@
                         <label for="contact" class="col-form-label">Status</label>
                     </div>
                     <div class="col-md-8">
-                        <select name="status" id="status" class="form-control">
-                            <option value="ac">Active</option>
-                            <option value="ina">Inactive</option>
-                        </select>
+                        <div class="styled-select">
+                            <select name="status" id="status" class="form-control">
+                                <option value="ac">Active</option>
+                                <option value="ina">Inactive</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
                     <input type="file" id="user_image">
                     <button class="btn btn-info user-image w-100">Click To Add Image</button>
-
                 </div>
 
             </div>
@@ -205,7 +208,7 @@
                 </tr>
                 </thead>
             </table>
-            <div class="d-flex search_user">
+            <div class="d-flex search_user g-1">
                 <input type="text" class="form-control" id="user_serial">
                 <input type="text" class="form-control" id="full_name_input">
                 <input type="text" class="form-control" id="partyType_input">
@@ -223,6 +226,22 @@
                     <td>Department</td>
                     <td>Status</td>
                 </tr>
+                <tr>
+                    <td>SL</td>
+                    <td>User ID</td>
+                    <td>Full Name</td>
+                    <td>Designation</td>
+                    <td>Department</td>
+                    <td>Status</td>
+                </tr>
+                <tr>
+                    <td>SL</td>
+                    <td>User ID</td>
+                    <td>Full Name</td>
+                    <td>Designation</td>
+                    <td>Department</td>
+                    <td>Status</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -232,6 +251,7 @@
 
 @push('js')
 <script>
+    
     $('.user-image').click(function(){
         $("#user_image").click();
     });
