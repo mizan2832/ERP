@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
@@ -35,6 +36,11 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/user-management', function () {
         return view('pages.user');
     })->name('admin');
+
+    //user account
+    Route::get('/user-account', [UserController::class, 'index'])->name('account.index');
+
+
 
 
 

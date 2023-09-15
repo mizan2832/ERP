@@ -18,7 +18,7 @@
 
       <!-- Layouts -->
       <li class="menu-item {{ Route::currentRouteNamed('buyer') || Route::currentRouteNamed('supplier')  ? 'show' : '' }}">
-        <a href="" class="menu-link ">
+        <a href="{{ route('admin.account.index') }}" class="menu-link ">
           <i class="menu-icon tf-icons bx bx-layout"></i>
           <div data-i18n="Layouts">User Account</div>
         </a>
