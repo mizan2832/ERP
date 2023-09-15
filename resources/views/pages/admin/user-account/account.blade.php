@@ -11,7 +11,31 @@
         font-size: 8px;
         -webkit-appearance: none;
     }
-    
+
+    input[type="file"]{
+        display: block;
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+
+    .save-button input{
+        margin-right: 10px;
+    }
+    #serial{
+        width: 50px;
+        text-align: left;
+        height: 30px;
+        margin: -10px;
+    }
+   .search_user{
+        margin-top: -16px;
+        width:
+    }
+    #user_serial{
+        width:30px;
+    }
+
 
 
 </style>
@@ -20,10 +44,11 @@
    @include('includes.admin_sidebar')
 @endsection
 @section('content')
-<div class="container  d-flex w-75">
+<div class="container  d-flex w-75 border p-3 mt-1">
     <!-- your form container -->
-    <div class="container pt-2">
-        <h4 class="text-center">User Management</h4>
+    <div class="user-create-form ">
+        <div class="container pt-2">
+            <h4 class="text-center">User Management</h4>
 
         <div class="row col-md-12">
             <div class="col-md-8">
@@ -117,7 +142,7 @@
                         <label for="contact" class="col-form-label">Unit Name</label>
                     </div>
                     <div class="col-md-8">
-                       <input type="text" name="unit_name" class="form-control" id="unit_name" placeholder="Double Click">
+                        <input type="text" name="unit_name" class="form-control" id="unit_name" placeholder="Double Click">
                     </div>
                 </div>
 
@@ -149,8 +174,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <input type="file" id="user-image">
-                    <button class="btn btn-info form-control">Click To Add Image</button>
+                    <input type="file" id="user_image">
+                    <button class="btn btn-info user-image w-100">Click To Add Image</button>
 
                 </div>
 
@@ -158,7 +183,57 @@
             <div class="col-md-4">
                 <img src="{{ asset('file/images/image.png') }}"  id="user_image" alt="user image" width="200px" height="200px">
             </div>
+            <div class="save-button d-flex justify-content-center align-items-center g-2">
+                <button  value="save" id="save" >Save</button>
+                <button  value="info" id="update" onclick="updateBuyer()" disabled='disabled'>Update</button>
+                <button  value="delete" id="delete" onclick="deleteBuyer()" disabled='disabled'>Delete</button>
+                <button  value="reset" id="reset" onclick="resetFormBuyer()">Refresh</button>
+                <input type="text" id="row_id" value="" hidden>
+            </div>
+        </div>
+    </div>
+        <div class="row pt-2">
+            <table class="table table-bordered " >
+                <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>User ID</th>
+                    <th>Full Name</th>
+                    <th>Designation</th>
+                    <th>Department</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+            </table>
+            <div class="d-flex search_user">
+                <input type="text" class="form-control" id="user_serial">
+                <input type="text" class="form-control" id="full_name_input">
+                <input type="text" class="form-control" id="partyType_input">
+                <input type="text" class="form-control" id="email_input">
+                <input type="text" class="form-control" id="team_input">
+                <input type="text" class="form-control" id="status_input">
+            </div>
+            <table class="table table-bordered " >
+                <tbody>
+                <tr>
+                    <td>SL</td>
+                    <td>User ID</td>
+                    <td>Full Name</td>
+                    <td>Designation</td>
+                    <td>Department</td>
+                    <td>Status</td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
  </div>
 @endsection
+
+@push('js')
+<script>
+    $('.user-image').click(function(){
+        $("#user_image").click();
+    });
+</script>
+@endpush
