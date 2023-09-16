@@ -144,7 +144,7 @@
                         <label for="contact" class="col-form-label">Unit Name</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="button" name="unit_name" class="form-control" id="unit_name" value="**Double Click**">
+                        <input type="text" name="unit_name" class="form-control" ondblclick="openModelPage('unit_select','Unit Selection')" id="unit_name" placeholder="**Double Click**" readonly>
                     </div>
                 </div>
 
@@ -153,7 +153,7 @@
                         <label for="contact" class="col-form-label">Buyer Name</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="button"  name="buyer_name" id="buyer_name" class="form-control" value="**Double Click**"  required>
+                        <input type="text"  name="buyer_name" id="buyer_name" class="form-control border-none" placeholder="**Double Click**" ondblclick="openModelPage('buyer_select','Buyer Selection')"  readonly required >
                     </div>
                 </div>
                 <div class="row">
@@ -250,8 +250,9 @@
 @endsection
 
 @push('js')
+<script src="{{ asset('assets/js/modal.js') }}"></script>
 <script>
-    
+
     $('.user-image').click(function(){
         $("#user_image").click();
     });
