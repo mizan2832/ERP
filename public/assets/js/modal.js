@@ -1,11 +1,11 @@
 function openModelPage(url,modelName){
     $.ajax({
         method:"GET",
-        dataType:"html",
+        dataType:"json",
         data:{url:url,modelName:modelName},
-        url: "{{ URL::route('modal') }}",
-        success:function($html){
-            console.log($html);
+        url: "modal",
+        success:function(data){
+            console.log(data);
         }
 
 

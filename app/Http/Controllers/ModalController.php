@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class ModalController extends Controller
 {
     public function index(Request $request) {
-        return json()->response($request);
+        return response()->json($request);
     }
 }

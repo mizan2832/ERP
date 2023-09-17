@@ -153,7 +153,7 @@
                         <label for="contact" class="col-form-label">Buyer Name</label>
                     </div>
                     <div class="col-md-8">
-                        <input type="text"  name="buyer_name" id="buyer_name" class="form-control border-none" placeholder="**Double Click**" ondblclick="openModelPage('buyer_select','Buyer Selection')"  readonly required >
+                        <input type="text"  name="buyer_name" id="buyer_name" class="form-control border-none" placeholder="**Double Click**" ondblclick="openModelPage('buyer_select','Buyer Selection')"  readonly required>
                     </div>
                 </div>
                 <div class="row">
