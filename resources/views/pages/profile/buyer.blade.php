@@ -9,7 +9,7 @@
             margin-left: 27px;
             margin-top: 20px;
             margin-right: 25px;
-        }
+    }
         .form-buyer-list{
             color: #ffffff;
             margin-left: 27px;

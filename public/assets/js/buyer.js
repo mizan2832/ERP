@@ -77,7 +77,7 @@ $("#save").click(function(e) {
             $("#team").val('');
 
         },
-        error : function(data,data1) {
+        error : function(data) {
             let response = data.responseJSON;
             let all_errors = response.errors;
 
