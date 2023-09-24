@@ -5,7 +5,7 @@ function openModelPage(url,modelName){
         data:{url:url,modelName:modelName},
         url: "modal",
         success:function(data){
-            console.log(data);
+            $("#unit_select").modal("show");
         }
 
 
