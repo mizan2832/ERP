@@ -62,6 +62,10 @@
         background-color: rgb(181, 249, 181);
         display: block;
       }
+
+
+
+
     </style>
 
     @stack('head')
@@ -92,7 +96,7 @@
               </a>
             </div>
 
-            <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <div class="navbar-nav-right d-flex  flex-nowrap">
               <!-- Search -->
               <div>
                 <ul class="navbar-nav navbar-fixed-top">

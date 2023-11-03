@@ -252,13 +252,13 @@
     <div class="modal-dialog modal-sm" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title text-center" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title justify-content-center" id="exampleModalLabel">Select Company</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <table class="">
+          <table class="table table-bordered table-hover">
             <thead>
                 <tr>
                     <td>SL</td>
@@ -271,15 +271,14 @@
                     <td>Radiance Jeans Ltd.</td>
                 </tr>
                 <tr>
-                    <td>1</td>
+                    <td>2</td>
                     <td>Radiance Fashion Ltd.</td>
                 </tr>
             </tbody>
           </table>
         </div>
         <div class="modal-footer justify-content-center">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Done</button>
         </div>
       </div>
     </div>

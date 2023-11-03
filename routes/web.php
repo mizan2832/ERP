@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\ModalController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
 use App\Http\Controllers\ItemAccountCreateController;
@@ -26,9 +27,13 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/buyer/fetch', [BuyerController::class, 'buyerFetch'])->name('buyer.fetch');
     Route::put('/buyer/update', [BuyerController::class, 'update'])->name('buyer.update');
     Route::delete('/buyer/delete/{id}', [BuyerController::class, 'destroy'])->name('buyer.delete');
+    //company route
+    Route::get('/company',[CompanyController::class,'index'])->name('company.index');
+
+    //end company route
+
 
     //supplier route
-
     Route::resource('/supplier',SupplierController::class);
     Route::resource('/item-group',ItemGroupController::class);
     Route::resource('/item-account',ItemAccountCreateController::class);

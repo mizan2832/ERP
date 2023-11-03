@@ -143,7 +143,7 @@
 
           <ul class="menu-sub">
             <li class="menu-item">
-              <a href="layouts-without-menu.html" class="menu-link">
+              <a href="{{ route('admin.company.index') }}" class="menu-link">
                 <div data-i18n="Without menu">Company Profile</div>
               </a>
             </li>
