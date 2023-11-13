@@ -34,7 +34,7 @@ function getBuyers() {
 $("#save").click(function(e) {
     e.preventDefault();
     let data = {
-                 "_token": $('#token').val(),
+
                 full_name:$("#full_name").val(),
                 short_name:$("#short_name").val(),
                 email:$("#email").val(),
@@ -59,6 +59,7 @@ $("#save").click(function(e) {
         url     :'buyer/add',
         data    : data,
         success:function(response){
+            console.log(response);
             showAllBuyer();
             $("#full_name").val('');
             $("#short_name").val('');
@@ -81,13 +82,13 @@ $("#save").click(function(e) {
             let response = data.responseJSON;
             let all_errors = response.errors;
 
-            Object.keys(all_errors).forEach(key => {
-                var locate_this = all_errors[key].toString().indexOf("field");
-                var mess = all_errors[key].toString();
-                // console.log(mess);
-                $("."+key+"_error").append("! This " + mess.slice(locate_this,all_errors[key].toString().length));
-                console.log(key, all_errors[key]);
-              });
+            // Object.keys(all_errors).forEach(key => {
+            //     var locate_this = all_errors[key].toString().indexOf("field");
+            //     var mess = all_errors[key].toString();
+            //     // console.log(mess);
+            //     $("."+key+"_error").append("! This " + mess.slice(locate_this,all_errors[key].toString().length));
+            //     console.log(key, all_errors[key]);
+            //   });
 
         }
     })
@@ -99,6 +100,7 @@ function showAllBuyer(){
         dataType:'JSON',
         url: "buyer/list",
         success:function(data){
+            console.log(data);
             $(".buyer_table tbody").html("");
             var se = 1;
             for (let i = 0; i < data.length; i++) {

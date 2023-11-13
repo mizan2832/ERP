@@ -64,22 +64,7 @@ class BuyerController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'full_name' => 'required|unique:buyers',
-            'short_name' => 'required|unique:buyers',
-            'party_type' => 'required',
-            'tag_company' => 'required',
-            'address' => 'required',
-            'status' => 'required',
-        ]);
 
-        if($validator->fails())
-        {
-            return response()->json([
-                'success'=>false,
-                'errors'=>($validator->getMessageBag()->toArray()),
-            ],400);
-        }else{
             $buyer = new Buyer();
             $buyer->full_name = $request->full_name;
             $buyer->short_name = $request->short_name;
@@ -98,15 +83,13 @@ class BuyerController extends Controller
             $buyer->team = $request->team;
             $buyer->save();
 
-            return response()->json([
-                'success'=> $buyer,
-                'errors' => false,
-            ],400);
+            return response()->json($buyer);
+
         }
 
 
 
-    }
+
 
     /**
      * Display the specified resource.

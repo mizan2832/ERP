@@ -45,9 +45,6 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
 
     //user account
     Route::get('/user-account', [UserController::class, 'index'])->name('account.index');
-
-
-
     //modal view
     Route::get('/modal',[ModalController::class,'index'])->name('buyer.add');
     //modal view end

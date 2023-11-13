@@ -35,7 +35,7 @@
     </style>
 @endpush
 @push('head')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="csrf-token" id="token" content="{{ csrf_token() }}">
 @endpush
 
 @section('sidebar')

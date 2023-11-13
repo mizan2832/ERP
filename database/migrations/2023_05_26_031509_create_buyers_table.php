@@ -22,14 +22,14 @@ return new class extends Migration
             $table->text('address');
             $table->text('tag_company');
             $table->integer('credit_limit')->nullable();
-            $table->integer('supplier')->nullable();
+            $table->string('supplier')->nullable();
             $table->integer('country');
             $table->integer('buffer_days')->nullable();
             $table->string('web')->nullable();
             $table->boolean('status')->default(true);
             $table->integer('partial')->nullable();
-            $table->integer('bank')->nullable();
-            $table->integer('team')->nullable();
+            $table->string('bank')->nullable();
+            $table->string('team')->nullable();
             $table->timestamps();
         });
     }
