@@ -46,6 +46,10 @@
         width: 100px;
     }
 
+    .save-button input{
+            margin-right: 10px;
+     }
+
 
 </style>
 @endpush
@@ -409,7 +413,54 @@
                     <button>Click to add company Image</button>
                 </div>
             </div>
+            <div class="save-button d-flex justify-content-center align-items-center g-2">
+                <button  value="save" id="save" >Save</button>
+                <button  value="info" id="update" onclick="updateBuyer()" disabled='disabled'>Update</button>
+                <button  value="delete" id="delete" onclick="deleteBuyer()" disabled='disabled'>Delete</button>
+                <button  value="reset" id="reset" onclick="resetFormBuyer()">Refresh</button>
+                <input type="text" id="row_id" value="" hidden>
+            </div>
         </div>
+    </div>
+    <div class="general">
+        <div class="header">
+            <span>List</span>
+        </div>
+
+        <div class="company-list">
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Sl No</th>
+                    <th>Company Name</th>
+                    <th>Group Name</th>
+                    <th>Short Name</th>
+                    <th>Contact Person</th>
+                    <th>Email</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Doe</td>
+                    <td>john@ex</td>
+                    <td>Doe</td>
+                    <td>john@ex</td>
+                    <td>john@ex</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>Doe</td>
+                    <td>john@ex</td>
+                    <td>Doe</td>
+                    <td>john@ex</td>
+                    <td>john@ex</td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+
     </div>
 </div>
 

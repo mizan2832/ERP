@@ -148,7 +148,7 @@
               </a>
             </li>
             <li class="menu-item">
-              <a href="layouts-without-navbar.html" class="menu-link">
+              <a href="{{ route('admin.department.index') }}" class="menu-link">
                 <div data-i18n="Without navbar">Department Profile</div>
               </a>
             </li>

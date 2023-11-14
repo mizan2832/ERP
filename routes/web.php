@@ -29,6 +29,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::delete('/buyer/delete/{id}', [BuyerController::class, 'destroy'])->name('buyer.delete');
     //company route
     Route::get('/company',[CompanyController::class,'index'])->name('company.index');
+    Route::get('/department',[CompanyController::class,'index'])->name('department.index');
 
     //end company route
 
