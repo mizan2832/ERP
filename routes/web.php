@@ -10,6 +10,7 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\MarketingTeamController;
 use App\Http\Controllers\ItemAccountCreateController;
 
 Auth::routes();
@@ -33,6 +34,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/company',[CompanyController::class,'index'])->name('company.index');
     Route::get('/department',[DepartmentController::class,'index'])->name('department.index');
     Route::get('/division',[DivisionController::class,'index'])->name('division.index');
+    Route::get('/marketing-team',[MarketingTeamController::class,'index'])->name('marketing_team.index');
 
     //end company route
 

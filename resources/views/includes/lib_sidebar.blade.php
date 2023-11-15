@@ -63,8 +63,8 @@
 
         <ul class="menu-sub">
           <li class="menu-item">
-            <a href="layouts-without-menu.html" class="menu-link">
-              <div data-i18n="Without menu">Marketing Info</div>
+            <a href="{{ route('admin.marketing_team.index') }}" class="menu-link">
+              <div data-i18n="Without menu">Marketing Team</div>
             </a>
           </li>
           <li class="menu-item">
@@ -119,7 +119,17 @@
           </li>
           <li class="menu-item">
             <a href="layouts-without-navbar.html" class="menu-link">
+              <div data-i18n="Without navbar">Garments Sample</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="layouts-without-navbar.html" class="menu-link">
               <div data-i18n="Without navbar">Buyer wise season entry</div>
+            </a>
+          </li>
+          <li class="menu-item">
+            <a href="layouts-without-navbar.html" class="menu-link">
+              <div data-i18n="Without navbar">Buyer wise brand entry</div>
             </a>
           </li>
           <li class="menu-item">
