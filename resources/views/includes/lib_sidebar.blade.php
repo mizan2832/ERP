@@ -149,7 +149,12 @@
             </li>
             <li class="menu-item">
               <a href="{{ route('admin.department.index') }}" class="menu-link">
-                <div data-i18n="Without navbar">Department Profile</div>
+                <div data-i18n="Without navbar">Department</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="{{ route('admin.division.index') }}" class="menu-link">
+                <div data-i18n="Without navbar">Division</div>
               </a>
             </li>
           </ul>

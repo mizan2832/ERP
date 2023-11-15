@@ -61,21 +61,21 @@
 
 <div class="container">
 
-    <h4 class="text-center">Department</h4>
+    <h4 class="text-center">Division</h4>
 
     <div class="general">
         <div class="header">
-            <span>Deparment Information</span>
+            <span>Division Information</span>
         </div>
         <div class="container-xxl flex-grow-1 p-4 general-form">
             <div class="row col-md-12 align-items-center">
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="department" class="col-form-label">Department </label>
+                                <label for="division" class="col-form-label">Division </label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="department" id="department">
+                                <input type="text" class="form-control" name="division" id="division">
                             </div>
 
                         </div>
@@ -93,11 +93,12 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="division" class="col-form-label">Division</label>
+                                <label for="company" class="col-form-label">Company</label>
                             </div>
                             <div class="col-md-8">
-                               <select name="division" id="division" class="form-control">
+                               <select name="company" id="company" class="form-control">
                                     <option value="">Select </option>
+                                    <option value="rjl">Radiance Jeans </option>
                                </select>
                             </div>
                         </div>

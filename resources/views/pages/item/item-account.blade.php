@@ -50,7 +50,7 @@
                     <div class="col-md-4">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="contact" class="col-form-label">Item Category</label>
+                                <label for="contact" class="col-form-label">Company</label>
                             </div>
                             <div class="col-md-8">
                                <select name="company" id="company" class="form-control">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="col-md-8">
                                 <select name="order_uom_id" id="order_uom_id" class="form-control">
-                                    <option value="">Select UOIM <i class="fa-solid fa-angle-down fa-lg"></i></option>
+                                    <option value="">Select UOM <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     @foreach ($uoms as $u)
                                         <option value="{{ $u->id }}">{{ $u->name }}</option>
                                     @endforeach
@@ -120,7 +120,7 @@
 
                             <div class="col-md-8">
                                 <select name="order_uom_id" id="order_uom_id" class="form-control">
-                                    <option value="">Select UOIM <i class="fa-solid fa-angle-down fa-lg"></i></option>
+                                    <option value="">Select UOM <i class="fa-solid fa-angle-down fa-lg"></i></option>
                                     @foreach ($uoms as $u)
                                         <option value="{{ $u->id }}">{{ $u->name }}</option>
                                     @endforeach

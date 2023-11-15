@@ -6,8 +6,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
+use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\ItemAccountCreateController;
 
 Auth::routes();
@@ -29,7 +31,8 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::delete('/buyer/delete/{id}', [BuyerController::class, 'destroy'])->name('buyer.delete');
     //company route
     Route::get('/company',[CompanyController::class,'index'])->name('company.index');
-    Route::get('/department',[CompanyController::class,'index'])->name('department.index');
+    Route::get('/department',[DepartmentController::class,'index'])->name('department.index');
+    Route::get('/division',[DivisionController::class,'index'])->name('division.index');
 
     //end company route
 
