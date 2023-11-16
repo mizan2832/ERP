@@ -6,11 +6,14 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\ModalController;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\SubMenuController;
+use App\Http\Controllers\TopMenuController;
 use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\MarketingTeamController;
+use App\Http\Controllers\SubChaildMenuController;
 use App\Http\Controllers\ItemAccountCreateController;
 
 Auth::routes();
@@ -54,6 +57,12 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     //modal view
     Route::get('/modal',[ModalController::class,'index'])->name('buyer.add');
     //modal view end
+
+    //menu route
+    Route::get('/mastermenu',[TopMenuController::class,'index'])->name('mastermenu');
+    Route::get('/submenu',[SubMenuController::class,'index'])->name('submenu');
+    Route::get('/subchildmenu',[SubChaildMenuController::class,'index'])->name('subchildmenu');
+    //menu route end
 
 });
 
