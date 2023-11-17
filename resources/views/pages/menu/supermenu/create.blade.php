@@ -59,6 +59,9 @@
 
 </style>
 @endpush
+@push('head')
+    <meta name="csrf-token" id="token" content="{{ csrf_token() }}">
+@endpush
 @section('sidebar')
    @include('includes.admin_sidebar')
 @endsection
@@ -78,30 +81,20 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-4">
-                                <label for="top_manu" class="col-form-label">Menu Name </label>
+                                <label for="top_menu" class="col-form-label">Menu Name </label>
                             </div>
                             <div class="col-md-8">
-                                <input type="text" class="form-control" name="top_manu" id="top_manu">
+                                <input type="text" class="form-control" name="top_menu" id="top_menu">
                             </div>
-
                         </div>
                     </div>
-
-
             </div>
-
-
-
         </div>
     </div>
-
-
-
     <div class="general">
-
         <div class="container-xxl flex-grow-1 p-4 general-form">
             <div class="save-button d-flex justify-content-center align-items-center g-2">
-                <button  value="save" id="save" >Save</button>
+                <button  value="save" id="save" onclick="saveMenu('top_menu')" >Save</button>
                 <button  value="info" id="update" onclick="updateBuyer()" disabled='disabled'>Update</button>
                 <button  value="delete" id="delete" onclick="deleteBuyer()" disabled='disabled'>Delete</button>
                 <button  value="reset" id="reset" onclick="resetFormBuyer()">Refresh</button>
@@ -140,3 +133,7 @@
 </div>
 
 @endsection
+
+@push('js')
+    <script src="{{ asset('assets/js/menu.js') }}"></script>
+@endpush

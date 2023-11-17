@@ -13,7 +13,7 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\MarketingTeamController;
-use App\Http\Controllers\SubChaildMenuController;
+use App\Http\Controllers\SubChildMenuController;
 use App\Http\Controllers\ItemAccountCreateController;
 
 Auth::routes();
@@ -61,7 +61,9 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     //menu route
     Route::get('/mastermenu',[TopMenuController::class,'index'])->name('mastermenu');
     Route::get('/submenu',[SubMenuController::class,'index'])->name('submenu');
-    Route::get('/subchildmenu',[SubChaildMenuController::class,'index'])->name('subchildmenu');
+    Route::get('/subchildmenu',[SubChildMenuController::class,'index'])->name('subchildmenu');
+
+    Route::post('menu/{menu_type}',[TopMenuController::class,'store'])->name('menu.store');
     //menu route end
 
 });

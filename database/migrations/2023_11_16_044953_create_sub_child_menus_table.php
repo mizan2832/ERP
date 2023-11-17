@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sub_chaild_menus', function (Blueprint $table) {
+        Schema::create('sub_child_menus', function (Blueprint $table) {
             $table->id();
             $table->string('child_menu_name');
             $table->unsignedBigInteger('top_menu_id');
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sub_chaild_menus');
+        Schema::dropIfExists('sub_child_menus');
     }
 };
