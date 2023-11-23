@@ -6,8 +6,6 @@ $(document).ready(function() {
         }
     });
 });
-
-
 function saveMenu(menu_name) {
     let data = {
         "top_menu" : $('#top_menu').val(),
@@ -20,7 +18,6 @@ function saveMenu(menu_name) {
         success : function (response) {
             showMenuList('mastermenu');
             $("#top_menu").val('');
-
         }
     })
 }
@@ -42,9 +39,27 @@ function showMenuList(menu_url){
                     $('.menu_table tbody').append(menuRow);
                 }
         }
-
-
     })
+}
+
+function getMenuData(menu_name,id,bg_color){
+    let menu_id     = id;
+    let bg_color    = bg_color;
+    let menu_name   = menu_name;
+
+    let data = {
+        menu_id        : id,
+        menu_type_name : menu_name,
+        bg_color       : bg_color
+    }
+
+    $.ajax({
+        type: 'GET',
+        dataType :'JSON',
+        url:
+    })
+
+
 }
 
 

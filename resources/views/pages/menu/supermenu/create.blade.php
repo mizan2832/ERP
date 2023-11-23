@@ -119,16 +119,13 @@
                   </tr>
                 </thead>
                 <tbody>
+                    @php
+                        $i = 1;
+                    @endphp
                     @foreach ($topMenu as $m)
-                        <tr>
-                            <td>{{ $m->id }}</td>
+                        <tr onclick="getMenuData('TopNav',{{ $m->id }})" style="cursor: pointer;" id="id_{{$i}}">
+                            <td>{{ $i++}}</td>
                             <td>{{ $m->top_menu_name }}</td>
-                            <td>
-                                <div class="d-flex justify-content-between">
-                                    <button type="button"><i class="fa-regular fa-pen-to-square"></i></button>
-                                    <button type="button"><i class="fa-solid fa-trash-can"></i></button>
-                                </div>
-                            </td>
                         </tr>
                     @endforeach
                 </tbody>
