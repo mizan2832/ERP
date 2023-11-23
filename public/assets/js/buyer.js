@@ -31,7 +31,6 @@ function getBuyers() {
 $("#save").click(function(e) {
     e.preventDefault();
     let data = {
-
                 full_name:$("#full_name").val(),
                 short_name:$("#short_name").val(),
                 email:$("#email").val(),
@@ -153,9 +152,7 @@ function fetchBuyer($id) {
             $("#partial").val(response.partial);
             $("#bank").val(response.bank);
             $("#team").val(response.team);
-
             $("#row_id").val(response.id);
-
             document.querySelector('#update').disabled = false;
             document.querySelector('#delete').disabled = false;
 
@@ -245,8 +242,6 @@ function deleteBuyer() {
             $("#team").val("");
             $("#row_id").val("");
             document.querySelector('#delete').disabled = true;
-
-
         }
     })
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\BuyerController;
 use App\Http\Controllers\ModalController;
@@ -12,8 +13,8 @@ use App\Http\Controllers\DivisionController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\ItemGroupController;
 use App\Http\Controllers\DepartmentController;
-use App\Http\Controllers\MarketingTeamController;
 use App\Http\Controllers\SubChildMenuController;
+use App\Http\Controllers\MarketingTeamController;
 use App\Http\Controllers\ItemAccountCreateController;
 
 Auth::routes();
@@ -63,7 +64,7 @@ Route::middleware(['auth','admin'])->name('admin.')->prefix('admin')->group(func
     Route::get('/submenu',[SubMenuController::class,'index'])->name('submenu');
     Route::get('/subchildmenu',[SubChildMenuController::class,'index'])->name('subchildmenu');
 
-    Route::post('menu/{menu_type}',[TopMenuController::class,'store'])->name('menu.store');
+    Route::post('/menu/{menu_Name}',[MenuController::class,'store'])->name('menu.store');
     //menu route end
 
 });

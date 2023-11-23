@@ -1,5 +1,9 @@
 @extends('master')
 @section('title','Master Menu Creation')
+@push('head')
+    <meta name="csrf-token" id="token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous"/>
+@endpush
 @push('css')
 <style>
     .header {
@@ -59,9 +63,7 @@
 
 </style>
 @endpush
-@push('head')
-    <meta name="csrf-token" id="token" content="{{ csrf_token() }}">
-@endpush
+
 @section('sidebar')
    @include('includes.admin_sidebar')
 @endsection
@@ -94,7 +96,7 @@
     <div class="general">
         <div class="container-xxl flex-grow-1 p-4 general-form">
             <div class="save-button d-flex justify-content-center align-items-center g-2">
-                <button  value="save" id="save" onclick="saveMenu('top_menu')" >Save</button>
+                <button  value="save" id="save" onclick="saveMenu('TopMenu')" >Save</button>
                 <button  value="info" id="update" onclick="updateBuyer()" disabled='disabled'>Update</button>
                 <button  value="delete" id="delete" onclick="deleteBuyer()" disabled='disabled'>Delete</button>
                 <button  value="reset" id="reset" onclick="resetFormBuyer()">Refresh</button>
@@ -108,7 +110,7 @@
         </div>
 
         <div class="company-list">
-            <table class="table table-bordered">
+            <table class="table table-bordered menu_table">
                 <thead>
                   <tr>
                     <th>Sl No</th>
@@ -117,14 +119,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Doe</td>
-                    <td>john@ex</td>
-                  </tr>
-
-
-
+                    @foreach ($topMenu as $m)
+                        <tr>
+                            <td>{{ $m->id }}</td>
+                            <td>{{ $m->top_menu_name }}</td>
+                            <td>
+                                <div class="d-flex justify-content-between">
+                                    <button type="button"><i class="fa-regular fa-pen-to-square"></i></button>
+                                    <button type="button"><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
               </table>
         </div>
